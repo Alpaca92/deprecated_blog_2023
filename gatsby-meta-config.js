@@ -1,8 +1,8 @@
 module.exports = {
   title: `Memory !== Record`,
-  description: `Blog posted about ...`,
+  description: `안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥`,
   author: `Ayaan`,
-  introduction: `compare yourself to who you were yesterday, not to who someone else is today.<br /> <i>by Dr. Jordan B. Peterson</i>`,
+  introduction: `compare yourself to who you were yesterday, not to who someone else is today by Dr. Jordan B. Peterson`,
   siteUrl: `https://gatsby-starter-bee.netlify.com`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
@@ -22,7 +22,7 @@ module.exports = {
     countOfInitialPost: 10, // Config your initial count of post
   },
   sponsor: {
-    buyMeACoffeeId: 'jbee',
+    buyMeACoffeeId: 'ayaan92',
   },
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
