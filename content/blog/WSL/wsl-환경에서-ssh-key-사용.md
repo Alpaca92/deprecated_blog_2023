@@ -143,7 +143,7 @@ $ git clone git@work:Username/RepositoryName.git
 
 이는 아마 본인이 처음 생각했던 것이랑은 다를 것이다
 
-이를 위해서는 `.gitconfig`설정을 해줘야하는데 이 설정은 [여기]()를 참고하도록 하자
+이를 위해서는 `.gitconfig`설정을 해줘야하는데 이 설정은 [여기](https://alpaca92.github.io/git/디렉토리-별-github-계정-설정/)를 참고하도록 하자
 
 ## \*references
 
