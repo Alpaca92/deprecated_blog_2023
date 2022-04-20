@@ -2,7 +2,7 @@ module.exports = {
   title: `Memory !== Record`,
   description: `Blog posted about ...`,
   author: `Ayaan`,
-  introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
+  introduction: `compare yourself to who you were yesterday, not to who someone else is today.<br /> <i>by Dr. Jordan B. Peterson</i>`,
   siteUrl: `https://gatsby-starter-bee.netlify.com`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
