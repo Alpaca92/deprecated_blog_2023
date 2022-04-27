@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   height: 60px;
-  background: $theme-gradient;
+  // background: $theme-gradient;
 
   .link {
     display: inline-block;
@@ -15,5 +15,13 @@
     margin-left: 20px;
     font-family: 'Catamaran';
     font-weight: 800;
+  }
+}
+
+.light {
+  .top {
+    .link {
+      color: $light-top-header-text-color;
+    }
   }
 }
