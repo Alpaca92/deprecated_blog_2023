@@ -1,7 +1,7 @@
 ---
 title: [nvm] node version 자동으로 변경하기
-date: 2022-04-26 21:04:79
-category: development
+date: 2022-04-27 09:04:78
+category: dev
 draft: false
 ---
 
