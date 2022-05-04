@@ -260,7 +260,7 @@ stepN안에 존재하는 가상의 신발(NFT)로 상점에서 SOL를 통해 사
 
 ![레벨업 비용표](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/etc/images/levelup_cost.png)
 
-![민팅비용 표](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/etc/images/minting_cost.png)
+![민팅비용 표](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/etc/images/minting_cost.jpg)
 
 ## \*references
 
