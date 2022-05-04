@@ -13,7 +13,7 @@ draft: false
 
 `git bash`를 열고 위에 우클릭해 options를 눌러준다
 
-![bash_options_image](./images/bash_options.png)
+![bash_options_image](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/dev/images/bash_options.png)
 
 options window에서 theme, font등을 골라 설정해주면 된다
 
