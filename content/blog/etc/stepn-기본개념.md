@@ -256,6 +256,11 @@ stepN안에 존재하는 가상의 신발(NFT)로 상점에서 SOL를 통해 사
 
 - [뛰벌쓰 카페](https://cafe.naver.com/stepn)
 
+\++ 신발 레벨업에 대한 비용과 민팅시 드는 비용은 아래표를 참고하자(2022.05.05. 기준)
+
+![레벨업 비용표](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/etc/images/levelup_cost.png)
+
+![민팅비용 표](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/etc/images/minting_cost.png)
 
 ## \*references
 
