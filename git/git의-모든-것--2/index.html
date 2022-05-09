@@ -243,7 +243,67 @@ index 0000000..03902a1
 #   modified:   CONTRIBUTING.md
 # ~ ~ ~
 &quot;.git/COMMIT_EDITMSG&quot; 9L, 283C</code></pre></div>
-<p>이 또한 vim인데 편집기를 변경하고 싶다면 <a href="">git의 모든것 -1</a>을 확인해보도록 하자</p></div><div class="social-share"></div><div class="sponsor-button"><a class="bmc-button" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/ayaan92"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span>Buy me a coffee</span></a></div><hr class="custom-hr"/><div class="bio"><div class="author"><div class="author-description"><div class="author-image gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:72px;height:72px;border-radius:100%"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAADRUlEQVQ4y2P4DwP/wADIePP+45qdh6snLEis7I0r7y7tmr1ww+5Hz19B1PwFq4EABgj19+9fIPn+05fGKUsUneOZNT0YlJwYVF0YVF2BDCZ1N3GbiKymyQ+evgQr/ofQDNF54fpdw8AsoFI2HW9uQ39+k0AB0yB+kyA+40AeowB2PR8GZWdZ++gtB07C9TNAdJ6/flfSNpJB3Y3PJJDLwA+omVXHi0HRkUHFmVXXm8fIHyjIZxLAou3JoeuzbvdRiJUgm999/KznnwHSaRwAVARUyqjhrumVUj9pcWrdBAXnOCYND6BxYKkAoKGiFiGXbz2AOru6fz7QtRA7eQz9mbU8df0yHr94DQmhj5+/xpZ2MWp6AHWC7DcOZFBx8c9uAGl++fa9jH0Um643xGyQnKJj5+xVQLnvP3/++QPy1PW7j4Ce59D35Tb0A6oBImAQHDt/jWHJpr0Mam68YFPhmjtmrQTq+f3nDyTybj98KmgWzKHng7BAyQnk3sKOmSA3GwdCNPMCJZSdJy3eANEMCdUrtx8APQW3Geh+Bg1316QKhrCCVgY1V7jNvMYBwBDObpwC1APUCtQPZCzfegAYhJAwh8eFhmcKQ3BeM7KzgRLAeFZwin326i08CQRkNwBTC5oaVfdEhvT6iQzKCGcDncSh58sgaxdf3v363ccv3763z1wB9BeLthePoT9MjT+TpodVZCHDlKWbgJ7kNYaayqThLmoVXtQxc8+xc91zVwODfcOeY+2zVqp5JDNrukPCjA8cLhkNkxjA0RDICQoMkGPqJi16+fYDJOn+/v3n1+/fEPbXbz9mrdwGDHOgSl5QgLmt330UlEgiitqBXgKmDaf4Mlg++QdEkGwG9DaQCfE8yDZVV6AXTIJzfv3+A9J8+dZ9MatwBjm79lkrgFy4bcgAklpW7zgEtINRw2PL/hOIjLEYmFSUnDfuOYZf8/0nz4FxVtk3D5JyGeD5a/qKLX0L1v4BmwWS+/8PqAGI/iHlfqDNtRMXYhQGYBWHzlzum792/4mLbz58+odkLTBvnLx0Y/KSjZv2HQfbiaoZrv/Tl6/bD52esXLr9OVbgLE4demm6cs3z1ixZd2uIy9ev4O4Fq4FAHqJtYQ/JS6YAAAAAElFTkSuQmCC" alt="Ayaan" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/035ce7483ee8f639767376dfc414c0e6/e5b88/profile.png 1x,
+<p>이 또한 vim인데 편집기를 변경하고 싶다면 <a href="">git의 모든것 -1</a>을 확인해보도록 하자</p>
+<p>커밋은 제목과 본문으로 이뤄져 있는데 인라인으로 간단하게 메세지를 남기고 싶다면</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ git commit -m &quot;Story 182: Fix benchmarks for speed&quot;
+[master 463dc4f] Story 182: Fix benchmarks for speed
+ 2 files changed, 2 insertions(+)
+ create mode 100644 README</code></pre></div>
+<p>위와 같이 <code class="language-text">-m</code> flag를 사용하면 된다</p>
+<h2 id="staging-area-생략하기" style="position:relative;"><a href="#staging-area-%EC%83%9D%EB%9E%B5%ED%95%98%EA%B8%B0" aria-label="staging area 생략하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>staging area 생략하기</h2>
+<p>보통은 수정된 파일을 모두 staging area로 올리고 commit을 하므로 이 과정을 단축하고 싶을 때가 있을 것이다</p>
+<p>이때는 <code class="language-text">$ git add .</code>대신 <code class="language-text">-a</code> flag를 사용하자</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ git commit -a -m &#39;added new benchmarks&#39;
+[master 83e38c7] added new benchmarks
+ 1 file changed, 5 insertions(+), 0 deletions(-)</code></pre></div>
+<h2 id="파일-삭제하기" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0" aria-label="파일 삭제하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 삭제하기</h2>
+<p>파일을 그냥 지우는 것과 git 명령어를 통해 지우는 것에 대한 차이점을 알아보자</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># 그냥 파일을 지울 때
+$ rm PROJECTS.md
+$ git status
+On branch master
+Your branch is up-to-date with &#39;origin/master&#39;. 
+hanges not staged for commit:
+  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+        deleted:    PROJECTS.md
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre></div>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># git 명령어를 통해 지웠을 때
+$ git rm PROJECTS.md
+rm &#39;PROJECTS.md&#39;
+
+$ git status On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+     deleted:    PROJECTS.md</code></pre></div>
+<p>두 개의 차이를 알겠는가?</p>
+<p>일반적인 방법으로의 삭제한 경우에는 unstaged 상태인 것을 알 수 있다</p>
+<p>하지만 git 명령어로 삭제를 하면 staged 상태가 되고 이를 커밋하면 비로소 파일은 삭제된다</p>
+<p>여러 파일을 한번에 삭제하고 싶을 때에는 file-glob형태를 사용할 수 있다</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ git rm log/\*.log</code></pre></div>
+<p>이 명령은 log 디렉토리안에 있는 모든 .log파일을 삭제한다</p>
+<p>파일을 실제로 삭제하는 것이 아니라 staging area에서만 삭제하고 싶다면 어떻게 해야할까?</p>
+<p>이때는 —cached 옵션을 사용하도록 하자</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ git rm --cached README</code></pre></div>
+<h2 id="파일-이름-변경하기" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%EC%9D%B4%EB%A6%84-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0" aria-label="파일 이름 변경하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 이름 변경하기</h2>
+<p>파일 이름을 변경할 때에는 <code class="language-text">$ git mv</code>명령을 사용하면 된다</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ git mv ${기존의 파일이름} ${변경할 파일이름}</code></pre></div>
+<p>사실 위 명렁은 아래의 과정을 단축한 명령일 뿐이다</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ mv README.md README
+$ git rm README.md
+$ git add README</code></pre></div>
+<p>이 명령을 실행하고 나면 git은 이름이 바뀐 사실을 알고 있다</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ git mv README.md README
+$ git status
+On branch master
+Your branch is up-to-date with &#39;origin/master&#39;.
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+     renamed:    README.md -&gt; README</code></pre></div></div><div class="social-share"></div><div class="sponsor-button"><a class="bmc-button" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/ayaan92"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"/><span>Buy me a coffee</span></a></div><hr class="custom-hr"/><div class="bio"><div class="author"><div class="author-description"><div class="author-image gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:72px;height:72px;border-radius:100%"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAADRUlEQVQ4y2P4DwP/wADIePP+45qdh6snLEis7I0r7y7tmr1ww+5Hz19B1PwFq4EABgj19+9fIPn+05fGKUsUneOZNT0YlJwYVF0YVF2BDCZ1N3GbiKymyQ+evgQr/ofQDNF54fpdw8AsoFI2HW9uQ39+k0AB0yB+kyA+40AeowB2PR8GZWdZ++gtB07C9TNAdJ6/flfSNpJB3Y3PJJDLwA+omVXHi0HRkUHFmVXXm8fIHyjIZxLAou3JoeuzbvdRiJUgm999/KznnwHSaRwAVARUyqjhrumVUj9pcWrdBAXnOCYND6BxYKkAoKGiFiGXbz2AOru6fz7QtRA7eQz9mbU8df0yHr94DQmhj5+/xpZ2MWp6AHWC7DcOZFBx8c9uAGl++fa9jH0Um643xGyQnKJj5+xVQLnvP3/++QPy1PW7j4Ce59D35Tb0A6oBImAQHDt/jWHJpr0Mam68YFPhmjtmrQTq+f3nDyTybj98KmgWzKHng7BAyQnk3sKOmSA3GwdCNPMCJZSdJy3eANEMCdUrtx8APQW3Geh+Bg1316QKhrCCVgY1V7jNvMYBwBDObpwC1APUCtQPZCzfegAYhJAwh8eFhmcKQ3BeM7KzgRLAeFZwin326i08CQRkNwBTC5oaVfdEhvT6iQzKCGcDncSh58sgaxdf3v363ccv3763z1wB9BeLthePoT9MjT+TpodVZCHDlKWbgJ7kNYaayqThLmoVXtQxc8+xc91zVwODfcOeY+2zVqp5JDNrukPCjA8cLhkNkxjA0RDICQoMkGPqJi16+fYDJOn+/v3n1+/fEPbXbz9mrdwGDHOgSl5QgLmt330UlEgiitqBXgKmDaf4Mlg++QdEkGwG9DaQCfE8yDZVV6AXTIJzfv3+A9J8+dZ9MatwBjm79lkrgFy4bcgAklpW7zgEtINRw2PL/hOIjLEYmFSUnDfuOYZf8/0nz4FxVtk3D5JyGeD5a/qKLX0L1v4BmwWS+/8PqAGI/iHlfqDNtRMXYhQGYBWHzlzum792/4mLbz58+odkLTBvnLx0Y/KSjZv2HQfbiaoZrv/Tl6/bD52esXLr9OVbgLE4demm6cs3z1ixZd2uIy9ev4O4Fq4FAHqJtYQ/JS6YAAAAAElFTkSuQmCC" alt="Ayaan" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/035ce7483ee8f639767376dfc414c0e6/e5b88/profile.png 1x,
 /static/035ce7483ee8f639767376dfc414c0e6/e7bd6/profile.png 1.5x,
 /static/035ce7483ee8f639767376dfc414c0e6/a12fc/profile.png 2x" /><img loading="lazy" width="72" height="72" srcset="/static/035ce7483ee8f639767376dfc414c0e6/e5b88/profile.png 1x,
 /static/035ce7483ee8f639767376dfc414c0e6/e7bd6/profile.png 1.5x,
