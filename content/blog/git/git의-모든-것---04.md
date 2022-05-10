@@ -1,5 +1,5 @@
 ---
-title: git의 모든 것 -4
+title: git의 모든 것 - 4
 date: 2022-05-10 09:05:09
 category: git
 draft: false
