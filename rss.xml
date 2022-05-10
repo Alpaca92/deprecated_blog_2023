@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 09 May 2022 06:09:42 GMT</lastBuildDate><item><title><![CDATA[git의 모든 것 -2]]></title><description><![CDATA[git 저장소 만들기 기존 디렉토리를 git 저장소로 만들기 이 명령은 이라는 하위 디렉토리를 만든다 디렉토리에는 저장소에 필요한 뼈대 파일(skeleton)이 들어 있어 해당 디렉토리를 git 저장소로 만들 수 있게 된다 기존 저장소를 clone…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--2/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--2/</guid><pubDate>Mon, 09 May 2022 10:05:43 GMT</pubDate><content:encoded>&lt;h1 id=&quot;git-저장소-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;git 저장소 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;git 저장소 만들기&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 May 2022 00:02:41 GMT</lastBuildDate><item><title><![CDATA[git의 모든 것 -3]]></title><description><![CDATA[커밋 히스토리 조회하기 기본적인 히스토리 조회 방법은 가 있다 원하는 내용들만을 출력하고 싶을 때에는 옵션을 사용하면 된다 여기서 는 커밋해시…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--3/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--3/</guid><pubDate>Mon, 09 May 2022 15:05:56 GMT</pubDate><content:encoded>&lt;h1 id=&quot;커밋-히스토리-조회하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;커밋 히스토리 조회하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;커밋 히스토리 조회하기&lt;/h1&gt;
+&lt;p&gt;기본적인 히스토리 조회 방법은 &lt;code class=&quot;language-text&quot;&gt;$ git log&lt;/code&gt;가 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git log
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &amp;lt;schacon@gee-mail.com&amp;gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon &amp;lt;schacon@gee-mail.com&amp;gt;
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    removed unnecessary test
+
+commit a11bef06a3f659402fe7563abf99ad00de2209e6
+Author: Scott Chacon &amp;lt;schacon@gee-mail.com&amp;gt;
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    first commit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;원하는 내용들만을 출력하고 싶을 때에는 &lt;code class=&quot;language-text&quot;&gt;--pretty-format&lt;/code&gt;옵션을 사용하면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git log --pretty=format:&amp;quot;%h - %an, %ar : %s&amp;quot;
+ca82a6d - Scott Chacon, 6 years ago : changed the version number
+085bb3b - Scott Chacon, 6 years ago : removed unnecessary test
+a11bef0 - Scott Chacon, 6 years ago : first commit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 &lt;code class=&quot;language-text&quot;&gt;%h&lt;/code&gt;는 커밋해시 7자리, &lt;code class=&quot;language-text&quot;&gt;%an&lt;/code&gt;은 저자 이름, &lt;code class=&quot;language-text&quot;&gt;%ar&lt;/code&gt;은 저자가 커밋한 시각, &lt;code class=&quot;language-text&quot;&gt;%s&lt;/code&gt;는 커밋 메세지 요약(제목)을 의미한다&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✔ 더 많은 옵션을 보고싶다면 &lt;a href=&quot;https://git-scm.com/docs/pretty-formats&quot;&gt;여기&lt;/a&gt;를 참고하도록 하자&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;$ git log&lt;/code&gt;에는 다양한 flag들이 있는데 그 중에 가장 유용한 flag중 하나가 &lt;code class=&quot;language-text&quot;&gt;-S&lt;/code&gt; flag다&lt;/p&gt;
+&lt;p&gt;이 옵션은 코드에서 추가되거나 제거된 내용 중 특정 텍스트가 포함되어 있는지를 검색한다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git log -S function_name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;되돌리기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0&quot; aria-label=&quot;되돌리기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;되돌리기&lt;/h1&gt;
+&lt;h2 id=&quot;커밋-수정하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%BB%A4%EB%B0%8B-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;커밋 수정하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;커밋 수정하기&lt;/h2&gt;
+&lt;p&gt;종종 완료된 커밋을 수정해야 할때가 생긴다&lt;/p&gt;
+&lt;p&gt;이 때 사용하는 것이 &lt;code class=&quot;language-text&quot;&gt;--amend&lt;/code&gt; 옵션이다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git commit --amend&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 명령은 staging area를 사용하여 커밋한다&lt;/p&gt;
+&lt;p&gt;따라서 커밋을 하자마자 사용한다면 커밋메세지만 변경하는 명령이 되고 또 다른 파일들을 add했다면 그 파일들까지 같이 커밋되면서 커밋메세지가 수정된다&lt;/p&gt;
+&lt;h2 id=&quot;파일-상태를-unstaged로-변경하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8C%8C%EC%9D%BC-%EC%83%81%ED%83%9C%EB%A5%BC-unstaged%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0&quot; aria-label=&quot;파일 상태를 unstaged로 변경하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;파일 상태를 unstaged로 변경하기&lt;/h2&gt;
+&lt;p&gt;두 개의 파일을 따로 커밋하고 싶었는데 &lt;code class=&quot;language-text&quot;&gt;$ git add .&lt;/code&gt;를 통해 둘 다 staging area에 들어가 버렸을 때는 어떻게 해야할까?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git add .
+$ git status
+On branch master Changes to be committed:
+  (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+
+     renamed:    README.md -&amp;gt; README
+     modified:   CONTRIBUTING.md&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아래 괄호에 &lt;code class=&quot;language-text&quot;&gt;$ git reset HEAD &amp;lt;file&gt;...&lt;/code&gt;를 사용하면 unstaged로 만들 수 있다고 나와있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git reset HEAD CONTRIBUTING.md
+Unstaged changes after reset:
+M   CONTRIBUTING.md
+
+$ git status
+On branch master Changes to be committed:
+  (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+
+    renamed:    README.md -&amp;gt; README
+
+Changes not staged for commit:
+  (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+  (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+
+    modified:   CONTRIBUTING.md&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠ &lt;code class=&quot;language-text&quot;&gt;git reset&lt;/code&gt;은 조심해서 사용해야 한다&lt;br /&gt;
+특히 &lt;code class=&quot;language-text&quot;&gt;--hard&lt;/code&gt;옵션을 사용하면 더 위험한데 이 부분에 대해서는 나중에 좀 더 자세히 다루도록 하자&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;modified-파일-되돌리기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#modified-%ED%8C%8C%EC%9D%BC-%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0&quot; aria-label=&quot;modified 파일 되돌리기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;modified 파일 되돌리기&lt;/h2&gt;
+&lt;p&gt;수정된 파일을 어떻게 하면 되돌릴 수 있을까?&lt;/p&gt;
+&lt;p&gt;가장 간단한 방법으로는 &lt;code class=&quot;language-text&quot;&gt;ctrl + z&lt;/code&gt;를 연타하는 것이다&lt;/p&gt;
+&lt;p&gt;하지만 git을 사용하면 좀 더 세련된 방법으로 되돌릴 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git status
+On branch master Changes to be committed:
+  (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+
+    renamed:    README.md -&amp;gt; README
+
+Changes not staged for commit:
+  (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
+  (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
+
+    modified:   CONTRIBUTING.md&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위 메세지는 꽤 구체적인 방법을 알려준다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git checkout -- CONTRIBUTING.md $ git status
+On branch master Changes to be committed:
+  (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+
+     renamed:    README.md -&amp;gt; README&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠ &lt;code class=&quot;language-text&quot;&gt;git checkout - [file]&lt;/code&gt; 명령은 꽤 위험한 명령이다&lt;br /&gt;
+원래 파일로 덮어쓰기 때문에 수정한 내용이 전부 사라지고 복원할 수 없다&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;변경한 내용을 쉽게 버릴 수 없고 당장은 되돌리고 싶을 때에는 &lt;code class=&quot;language-text&quot;&gt;stash&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;branch&lt;/code&gt;를 사용하는 것이 좋다&lt;/p&gt;
+&lt;p&gt;이에 대해서는 나중에 좀 더 구체적으로 다뤄보자&lt;/p&gt;</content:encoded></item><item><title><![CDATA[git의 모든 것 -2]]></title><description><![CDATA[git 저장소 만들기 기존 디렉토리를 git 저장소로 만들기 이 명령은 이라는 하위 디렉토리를 만든다 디렉토리에는 저장소에 필요한 뼈대 파일(skeleton)이 들어 있어 해당 디렉토리를 git 저장소로 만들 수 있게 된다 기존 저장소를 clone…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--2/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--2/</guid><pubDate>Mon, 09 May 2022 10:05:43 GMT</pubDate><content:encoded>&lt;h1 id=&quot;git-저장소-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;git 저장소 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;git 저장소 만들기&lt;/h1&gt;
 &lt;h2 id=&quot;기존-디렉토리를-git-저장소로-만들기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EC%A1%B4-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%A5%BC-git-%EC%A0%80%EC%9E%A5%EC%86%8C%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot; aria-label=&quot;기존 디렉토리를 git 저장소로 만들기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기존 디렉토리를 git 저장소로 만들기&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ cd my_project
 $ git init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -177,7 +271,7 @@ index 0000000..03902a1
 #   modified:   CONTRIBUTING.md
 # ~ ~ ~
 &amp;quot;.git/COMMIT_EDITMSG&amp;quot; 9L, 283C&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 또한 vim인데 편집기를 변경하고 싶다면 &lt;a href=&quot;&quot;&gt;git의 모든것 -1&lt;/a&gt;을 확인해보도록 하자&lt;/p&gt;
+&lt;p&gt;이 또한 vim인데 편집기를 변경하고 싶다면 &lt;a href=&quot;https://alpaca92.github.io/git/git%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83--1/#git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95&quot;&gt;git의 모든것 -1&lt;/a&gt;을 확인해보도록 하자&lt;/p&gt;
 &lt;p&gt;커밋은 제목과 본문으로 이뤄져 있는데 인라인으로 간단하게 메세지를 남기고 싶다면&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git commit -m &amp;quot;Story 182: Fix benchmarks for speed&amp;quot;
 [master 463dc4f] Story 182: Fix benchmarks for speed
@@ -196,7 +290,7 @@ index 0000000..03902a1
 $ rm PROJECTS.md
 $ git status
 On branch master
-Your branch is up-to-date with &amp;#39;origin/master&amp;#39;. 
+Your branch is up-to-date with &amp;#39;origin/master&amp;#39;.
 hanges not staged for commit:
   (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed)
   (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory)
