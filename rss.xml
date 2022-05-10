@@ -1,4 +1,230 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 May 2022 00:02:41 GMT</lastBuildDate><item><title><![CDATA[git의 모든 것 -3]]></title><description><![CDATA[커밋 히스토리 조회하기 기본적인 히스토리 조회 방법은 가 있다 원하는 내용들만을 출력하고 싶을 때에는 옵션을 사용하면 된다 여기서 는 커밋해시…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--3/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--3/</guid><pubDate>Mon, 09 May 2022 15:05:56 GMT</pubDate><content:encoded>&lt;h1 id=&quot;커밋-히스토리-조회하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;커밋 히스토리 조회하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;커밋 히스토리 조회하기&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 10 May 2022 01:40:31 GMT</lastBuildDate><item><title><![CDATA[git의 모든 것 -5]]></title><description><![CDATA[태그 다른 버전 관리 시스템(VCS)처럼 git도 태그를 지원한다 보통 릴리즈할 때 등등으로 사용한다 태그 조회하기 검색 패턴을 사용하여 태그를 검색 할 수도 있다 태그 붙이기 git…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--5/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--5/</guid><pubDate>Tue, 10 May 2022 10:05:44 GMT</pubDate><content:encoded>&lt;h1 id=&quot;태그&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8&quot; aria-label=&quot;태그 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그&lt;/h1&gt;
+&lt;p&gt;다른 버전 관리 시스템(VCS)처럼 git도 태그를 지원한다&lt;/p&gt;
+&lt;p&gt;보통 릴리즈할 때 &lt;code class=&quot;language-text&quot;&gt;v1.0&lt;/code&gt;등등으로 사용한다&lt;/p&gt;
+&lt;h2 id=&quot;태그-조회하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;태그 조회하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그 조회하기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git tag
+v0.1
+v1.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;검색 패턴을 사용하여 태그를 검색 할 수도 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git tag -l &amp;quot;v1.8.5*&amp;quot;
+v1.8.5
+v1.8.5-rc0
+v1.8.5-rc1
+v1.8.5-rc2
+v1.8.5-rc3
+v1.8.5.1
+v1.8.5.2
+v1.8.5.3
+v1.8.5.4
+v1.8.5.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;태그-붙이기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8-%EB%B6%99%EC%9D%B4%EA%B8%B0&quot; aria-label=&quot;태그 붙이기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그 붙이기&lt;/h2&gt;
+&lt;p&gt;git의 태그는 &lt;code class=&quot;language-text&quot;&gt;lightweight&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;annotated&lt;/code&gt; 태그로 두 종류가 있다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;lightweight&lt;/code&gt;태그는 브랜치와 비슷한데 브랜치처럼 가리키는 지점을 최신 커밋으로 이동시키지 않고 단순히 특정 커밋에 대한 포인터로써의 역할을 한다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;annotated&lt;/code&gt;태그는 git 데이터베이스에 태그를 만드는 사람의 이름, 이메일, 태그를 만든 날짜, 태그 메세지도 저장한다&lt;/p&gt;
+&lt;h2 id=&quot;annotated-태그&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#annotated-%ED%83%9C%EA%B7%B8&quot; aria-label=&quot;annotated 태그 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;annotated 태그&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;-a&lt;/code&gt;옵션으로 &lt;code class=&quot;language-text&quot;&gt;annotated&lt;/code&gt;태그를 만들 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git tag -a v1.4 -m &amp;quot;my version 1.4&amp;quot;
+$ git tag
+v0.1
+v1.3
+v1.4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;-m&lt;/code&gt;옵션을 사용하면 태그르르 저장할 때 메세지를 함께 저장할 수 있다&lt;/p&gt;
+&lt;p&gt;저장된 메세지 등은 &lt;code class=&quot;language-text&quot;&gt;$ git show&lt;/code&gt;를 통해 구체적으로 확인할 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git show v1.4
+tag v1.4
+Tagger: Ben Straub &amp;lt;ben@straub.cc&amp;gt;
+Date:   Sat May 3 20:19:12 2014 -0700
+
+my version 1.4
+
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &amp;lt;schacon@gee-mail.com&amp;gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;lightweight-태그&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#lightweight-%ED%83%9C%EA%B7%B8&quot; aria-label=&quot;lightweight 태그 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;lightweight 태그&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;lightweight&lt;/code&gt; 태그는 기본적으로 파일에 커밋 체크섬을 저장하는 것 뿐이다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;lightweight&lt;/code&gt; 태그를 만들 때에는 &lt;code class=&quot;language-text&quot;&gt;-a&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;-m&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;-s&lt;/code&gt;옵션을 사용하지 않고 그저 이름만 달아주면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git tag v1.4-lw
+$ git tag
+v0.1
+v1.3
+v1.4
+v1.4-lw
+v1.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 태그는 &lt;code class=&quot;language-text&quot;&gt;$ git show&lt;/code&gt;로 확인해도 별도의 태그 정보를 확인할 수 없다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git show v1.4-lw
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &amp;lt;schacon@gee-mail.com&amp;gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;나중에-태그하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%82%98%EC%A4%91%EC%97%90-%ED%83%9C%EA%B7%B8%ED%95%98%EA%B8%B0&quot; aria-label=&quot;나중에 태그하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;나중에 태그하기&lt;/h2&gt;
+&lt;p&gt;예전 커밋에 대해서도 태그를 할 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git log --pretty=oneline
+15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch &amp;#39;experiment&amp;#39;
+a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
+0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
+6d52a271eda8725415634dd79daabbc4d9b6008e Merge branch &amp;#39;experiment&amp;#39;
+0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit function
+4682c3261057305bdd616e23b64b0857d832627b added a todo file
+166ae0c4d3f420721acbb115cc33848dfcc2121a started write support
+9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
+8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git tag -a v1.2 9fceb02&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git tag
+v0.1
+v1.2
+v1.3
+v1.4
+v1.4-lw
+v1.5
+
+$ git show v1.2
+tag v1.2
+Tagger: Scott Chacon &amp;lt;schacon@gee-mail.com&amp;gt;
+Date:   Mon Feb 9 15:32:16 2009 -0800
+
+version 1.2
+commit 9fceb02d0ae598e95dc970b74767f19372d61af8
+Author: Magnus Chacon &amp;lt;mchacon@gee-mail.com&amp;gt;
+Date:   Sun Apr 27 20:43:35 2008 -0700
+
+    updated rakefile
+
+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;태그-공유하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0&quot; aria-label=&quot;태그 공유하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그 공유하기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;$ git push&lt;/code&gt; 명령은 자동으로 리모트 서버에 태그를 전송하지 않으므로 태그를 만들었다면 서버에 별도로 push 해줘야 한다&lt;/p&gt;
+&lt;p&gt;브랜치를 공유하는 것과 방법은 동일하다&lt;br /&gt;
+(&lt;code class=&quot;language-text&quot;&gt;$ git push origin ${태그이름}&lt;/code&gt;)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git push origin v1.5
+Counting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
+Total 14 (delta 3), reused 0 (delta 0)
+To git@github.com:schacon/simplegit.git
+
+  * [new tag]         v1.5 -&amp;gt; v1.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;만약 한번에 여러 태그를 push하고 싶다면 &lt;code class=&quot;language-text&quot;&gt;--tags&lt;/code&gt;옵션을 추가하면 된다&lt;/p&gt;
+&lt;p&gt;이 명령은 리모트 서버에 없는 태그를 모두 전송해준다&lt;/p&gt;
+&lt;p&gt;이제 누군가 저장소에 clone하거나 pull하게 되면 모든 태그 정보도 함께 전송된다&lt;/p&gt;
+&lt;h2 id=&quot;태그를-checkout-하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%83%9C%EA%B7%B8%EB%A5%BC-checkout-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;태그를 checkout 하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;태그를 checkout 하기&lt;/h2&gt;
+&lt;p&gt;태그가 특정 버전을 가리키고 있고 특정 버전의 파일을 체크아웃해서 확인하고 싶다면 다음과 같이 실행한다&lt;/p&gt;
+&lt;p&gt;단 태그를 체크아웃하면 &lt;code class=&quot;language-text&quot;&gt;detached HEAD&lt;/code&gt;상태가 되며 일부 git 관련 작업이 브랜치에서 작업하는 것과 다르게 동작할 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ git checkout 2.0.0
+Note: checking out &apos;2.0.0&apos;.
+You are in &apos;detached HEAD&apos; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b &amp;lt;new-branch&gt;
+
+HEAD is now at 99ada87... Merge pull request #89 from schacon/appendix- final
+
+$ git checkout 2.0-beta-0.1
+Previous HEAD position was 99ada87... Merge pull request #89 from schacon/appendix-final
+HEAD is now at df3f601... add atlas.json and cover image&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;detached HEAD&lt;/code&gt;상태에서 작업을 하고 커밋을 만들면 태그는 그대로 있으나 새로운 커밋이 하나 쌓인 상태가 되고 새 커밋에 도달할 수 있는 방법이 따로 없게 된다&lt;/p&gt;
+&lt;p&gt;물론 커밋의 해시 값을 정확히 기억하고 있으면 가능하긴 하지만 이보다는 브랜치를 만들어서 작업하는 것이 바람직하다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git checkout -b version2 v2.0.0
+Switched to a new branch &amp;#39;version2&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[git의 모든 것 -4]]></title><description><![CDATA[…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--4/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--4/</guid><pubDate>Tue, 10 May 2022 09:05:09 GMT</pubDate><content:encoded>&lt;h1 id=&quot;리모트-저장소&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C&quot; aria-label=&quot;리모트 저장소 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리모트 저장소&lt;/h1&gt;
+&lt;p&gt;리모트 저장소를 관리할 수 있는 능력이 있을 때 비로소 협업을 할 수 있다고 말할 수 있다&lt;/p&gt;
+&lt;p&gt;리모트 저장소는 인터넷이나 네트워크 어딘가에 있는 저장소를 말한다&lt;br /&gt;
+(구글 드라이브 같은 곳에 코드를 올려둔다고 생각하면 된다)&lt;/p&gt;
+&lt;p&gt;저장소를 클론한다면 리모트 저장소가 자동으로 등록되기 때문에 &lt;code class=&quot;language-text&quot;&gt;origin&lt;/code&gt;이라는 이름을 볼 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git clone https://github.com/schacon/ticgit Cloning into &amp;#39;ticgit&amp;#39;...
+remote: Reusing existing pack: 1857, done. remote: Total 1857 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (1857/1857), 374.35 KiB | 268.00 KiB/s, done. Resolving deltas: 100% (772/772), done.
+Checking connectivity... done.
+$ cd ticgit
+$ git remote origin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이를 &lt;code class=&quot;language-text&quot;&gt;-v&lt;/code&gt; 옵션을 통해 단축이름과 URL을 함께 볼 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git remote -v
+origin  https://github.com/schacon/ticgit (fetch)
+origin  https://github.com/schacon/ticgit (push)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;만약 리모트 저장소가 여러곳이라면 모든 저장소를 보여준다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git remote -v
+bakkdoor  https://github.com/bakkdoor/grit (fetch)
+bakkdoor  https://github.com/bakkdoor/grit (push)
+cho45     https://github.com/cho45/grit (fetch)
+cho45     https://github.com/cho45/grit (push)
+defunkt   https://github.com/defunkt/grit (fetch)
+defunkt   https://github.com/defunkt/grit (push)
+koke      git://github.com/koke/grit.git (fetch)
+koke      git://github.com/koke/grit.git (push)
+origin    git@github.com:mojombo/grit.git (fetch)
+origin    git@github.com:mojombo/grit.git (push)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 여러개의 리모트 저장소가 등록되어 있으면 다른 사람이 기여한 내용(contributions)을 쉽게 가져올 수 있다&lt;/p&gt;
+&lt;h2 id=&quot;리모트-저장소-추가하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0&quot; aria-label=&quot;리모트 저장소 추가하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리모트 저장소 추가하기&lt;/h2&gt;
+&lt;p&gt;리모트 저장소를 추가하기 위해서는 해당 저장소에 들어가 &lt;code class=&quot;language-text&quot;&gt;$ git remote add ${리모트 저장소 이름} ${저장소 url}&lt;/code&gt;명령을 사용하면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git remote add pb https://github.com/paulboone/ticgit
+$ git remote -v
+origin  https://github.com/schacon/ticgit (fetch)
+origin  https://github.com/schacon/ticgit (push)
+pb  https://github.com/paulboone/ticgit (fetch)
+pb  https://github.com/paulboone/ticgit (push)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 URL 대신에 &lt;code class=&quot;language-text&quot;&gt;pb&lt;/code&gt;라는 이름을 사용할 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git fetch pb
+remote: Counting objects: 43, done.
+remote: Compressing objects: 100% (36/36), done.
+remote: Total 43 (delta 10), reused 31 (delta 5) Unpacking objects: 100% (43/43), done.
+From https://github.com/paulboone/ticgit
+ * [new branch]      master     -&amp;gt; pb/master
+ * [new branch]      ticgit     -&amp;gt; pb/ticgit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;$git fetch ${리모트 저장소 이름}&lt;/code&gt;을 통해 &lt;code class=&quot;language-text&quot;&gt;paulboone&lt;/code&gt;의 저장소에 있는 것을 가져올 수 있다&lt;/p&gt;
+&lt;p&gt;로컬에서 &lt;code class=&quot;language-text&quot;&gt;pb/master&lt;/code&gt;가 &lt;code class=&quot;language-text&quot;&gt;paulboone&lt;/code&gt;의 master 브랜치다&lt;/p&gt;
+&lt;p&gt;이 브랜치를 로컬 브랜치 중 하나에 merge하거나 checkout해서 브랜치 내용을 자세히 확인할 수 있다&lt;/p&gt;
+&lt;h2 id=&quot;리모트-저장소를-pull-하거나-fetch-하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C%EB%A5%BC-pull-%ED%95%98%EA%B1%B0%EB%82%98-fetch-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;리모트 저장소를 pull 하거나 fetch 하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리모트 저장소를 pull 하거나 fetch 하기&lt;/h2&gt;
+&lt;p&gt;위에서 설명했듯 리모트 저장소에서 데이터를 가져오려면 간단히 아래와 같이 실행한다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git fetch ${리모트 저장소 이름}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 명령은 로컬에는 없지만 리모트 저장소에는 있는 데이터를 모두 가져온다&lt;/p&gt;
+&lt;p&gt;이때 데이터를 모두 로컬로 가져온다고 해서 자동으로 merge를 하는 것은 아니다&lt;/p&gt;
+&lt;p&gt;이를 보완하는 명령어가 &lt;code class=&quot;language-text&quot;&gt;$ git pull&lt;/code&gt;이다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;$ git pull&lt;/code&gt; 명령은 리모트 저장소 브랜치에서 데이터를 가져올 뿐만 아니라 자동으로 로컬 브랜치와 merge 시킬 수 있다&lt;/p&gt;
+&lt;h2 id=&quot;리모트-저장소에-push-하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-push-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;리모트 저장소에 push 하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리모트 저장소에 push 하기&lt;/h2&gt;
+&lt;p&gt;프로젝트를 공유하고 싶을 때 upstream 저장소에 push 할 수 있다&lt;/p&gt;
+&lt;p&gt;이 명령은 &lt;code class=&quot;language-text&quot;&gt;$ git push ${리모트 저장소 이름} ${브랜치 이름}&lt;/code&gt;으로 단순하다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git push orirgin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 명령은 리모트 저장소에 쓰기 권한이 있고 본인이 clone하고 난 이후 아무도 upstream 저장소에 push 하지 않았을 때만 사용할 수 있다&lt;/p&gt;
+&lt;p&gt;다시 말해 clone하여 작업하는 사람이 여러명이라면 다른 사람이 push한 후에 push하려고 해도 할 수 없다(conflict error)&lt;/p&gt;
+&lt;p&gt;이러한 충돌에러는 다른 사람이 push한 내용을 merge한 후에 push하면 해결할 수 있다&lt;/p&gt;
+&lt;h2 id=&quot;리모트-저장소-살펴보기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;리모트 저장소 살펴보기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리모트 저장소 살펴보기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;$ git remote show ${리모트 저장소 이름}&lt;/code&gt; 명령으로 리모트 저장소의 구체적인 정보를 확인할 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git remote show origin * remote origin
+  Fetch URL: https://github.com/schacon/ticgit
+  Push  URL: https://github.com/schacon/ticgit
+  HEAD branch: master
+  Remote branches:
+
+    master                               tracked
+    dev-branch                           tracked
+
+  Local branch configured for &amp;#39;git pull&amp;#39;:
+    master merges with remote master
+
+  Local ref configured for &amp;#39;git push&amp;#39;:
+    master pushes to master (up to date)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;리모트 저장소의 URL과 추적하는 브랜치를 출력한다&lt;/p&gt;
+&lt;p&gt;이 명령은 &lt;code class=&quot;language-text&quot;&gt;$ git pull&lt;/code&gt; 명령을 실행할 때 master 브랜치와 merge할 브랜치가 무엇인지 보여준다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;$ git pull&lt;/code&gt; 명령은 리모트 저장소 브랜치의 데이터를 모두 가져오고 나서 자동으로 merge하고 가져온 모든 리모트 저장소 정보를 출력해준다&lt;/p&gt;
+&lt;h2 id=&quot;리모트-저장소-이름을-바꾸거나-리모트-저장소를-삭제하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%9D%B4%EB%A6%84%EC%9D%84-%EB%B0%94%EA%BE%B8%EA%B1%B0%EB%82%98-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EC%A0%80%EC%9E%A5%EC%86%8C%EB%A5%BC-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;리모트 저장소 이름을 바꾸거나 리모트 저장소를 삭제하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;리모트 저장소 이름을 바꾸거나 리모트 저장소를 삭제하기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git remote remae pb paul
+$ git remote
+origin
+paul&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 간단하게 변경 할 수 있다&lt;/p&gt;
+&lt;p&gt;이때 로컬에서 관리하던 리모트 저장소의 브랜치 이림도 함께 변경된다는 점을 기억하자&lt;/p&gt;
+&lt;p&gt;지금까지 &lt;code class=&quot;language-text&quot;&gt;pb/master&lt;/code&gt;로 리모트 저장소 브랜치를 사용했다면 이제는 &lt;code class=&quot;language-text&quot;&gt;paul/master&lt;/code&gt;라고 사용해야 한다&lt;/p&gt;
+&lt;p&gt;리모트 저장소를 삭제해야 한다면 &lt;code class=&quot;language-text&quot;&gt;$ git remote remove(rm)&lt;/code&gt; 명령을 사용하면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git remote rm paul
+$ git remote
+origin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;remove로 리모트 저장소를 삭제하면 해당 리모트 저장소에 관련된 추적 브랜치 정보나 모든 설정 내용도 함께 삭제된다&lt;/p&gt;</content:encoded></item><item><title><![CDATA[git의 모든 것 -3]]></title><description><![CDATA[커밋 히스토리 조회하기 기본적인 히스토리 조회 방법은 가 있다 원하는 내용들만을 출력하고 싶을 때에는 옵션을 사용하면 된다 여기서 는 커밋해시…]]></description><link>https://alpaca92.github.io/git/git의-모든-것--3/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것--3/</guid><pubDate>Mon, 09 May 2022 15:05:56 GMT</pubDate><content:encoded>&lt;h1 id=&quot;커밋-히스토리-조회하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;커밋 히스토리 조회하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;커밋 히스토리 조회하기&lt;/h1&gt;
 &lt;p&gt;기본적인 히스토리 조회 방법은 &lt;code class=&quot;language-text&quot;&gt;$ git log&lt;/code&gt;가 있다&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git log
 commit ca82a6dff817ec66f44342007202690a93763949
