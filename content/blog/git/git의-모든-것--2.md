@@ -171,7 +171,7 @@ $ touch .gitignore # root path
 *~ # ~로 끝나는 파일을 git이 무시
 ```
 
-asterisk 2개(**)로 디렉토리 안의 디렉토리 또한 표현할 수 있다
+asterisk 2개(\*\*)로 디렉토리 안의 디렉토리 또한 표현할 수 있다
 
 예를 들어 `a/**/z`는 a/z, a/b/z, a/b/c/z 등의 패턴을 모두 git이 무시한다
 
@@ -218,6 +218,7 @@ Changes not staged for commit:
 
     modified:   CONTRIBUTING.md
 ```
+
 ```sh
 $ git diff
 diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
@@ -278,7 +279,7 @@ $ git commit
 ".git/COMMIT_EDITMSG" 9L, 283C
 ```
 
-이 또한 vim인데 편집기를 변경하고 싶다면 [git의 모든것 -1]()을 확인해보도록 하자
+이 또한 vim인데 편집기를 변경하고 싶다면 [git의 모든것 -1](https://alpaca92.github.io/git/git의-모든-것--1/#git-최초-설정)을 확인해보도록 하자
 
 커밋은 제목과 본문으로 이뤄져 있는데 인라인으로 간단하게 메세지를 남기고 싶다면
 
@@ -288,6 +289,7 @@ $ git commit -m "Story 182: Fix benchmarks for speed"
  2 files changed, 2 insertions(+)
  create mode 100644 README
 ```
+
 위와 같이 `-m` flag를 사용하면 된다
 
 ## staging area 생략하기
@@ -311,7 +313,7 @@ $ git commit -a -m 'added new benchmarks'
 $ rm PROJECTS.md
 $ git status
 On branch master
-Your branch is up-to-date with 'origin/master'. 
+Your branch is up-to-date with 'origin/master'.
 hanges not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
