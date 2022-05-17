@@ -167,25 +167,142 @@ final Set<String> names = {
 print(names); // {'Flutter', 'Black Pink'}
 ```
 
+# enum
 
+```dart
+enum Status {
+  approved,
+  pending,
+  rejected,
+}
 
+void main() {
+  Status status = Status.pending;
+  
+  if (status == Status.approved) {
+    print('승인입니다');
+  } else if(status == Status.pending) {
+    print('대기입니다');
+  } else {
+    print('거절입니다');
+  }
+}
+```
 
+`enum`을 쓰는 이유는 정확히 **`Status`안의 값들만을 사용하겠다**라고 명시해주는 것과 같기 때문이다
 
+```dart
+void main() {
+  String status = 'pending';
+  
+  if (status == 'approved') {
+    print('승인입니다');
+  } else if(status == 'pending') {
+    print('대기입니다');
+  } else {
+    print('거절입니다');
+  }
+}
+```
 
+위와 같이 해도 동일한 결과를 가져오지만 `enum`을 사용함으로써 오타를 방지하고 `status`의 값에는 approved, pending, rejected 딱 세가지만 있을 수 있다는 것을 명시한다
 
+# function
 
+```dart
+void main() {
+  addNumbers(1, 2, 3);
+}
 
+void addNumbers(int x, int y, int z) {
+  int acc = x + y + z;
 
+  if (acc % 2 == 0) {
+    print('짝수입니다');
+  } else {
+    print('홀수입니다');
+  }
+}
+```
 
+위와 같이 파라미터에 타입을 지정해주고 함수의 타입 또한 지정해줄 수 있다<br />
+(위치가 정해져 있는 파라미터를 `positional parameter`라고 한다)
 
+## optional parameter
 
+```dart
+void main() {
+  addNumbers(1, 2, 3);
+}
 
+void addNumbers(int x, [int? y = 0, int? z = 0]) {
+  int acc = x + y + z;
 
+  if (acc % 2 == 0) {
+    print('짝수입니다');
+  } else {
+    print('홀수입니다');
+  }
+}
+```
 
+파라미터가 optional인 경우는 대괄호로 감싸주면 된다
 
+## named parameter
 
+```dart
+void main() {
+  addNumbers(x: 1, z: 3, y: 2);
+}
 
+void addNumbers({
+  required int x,
+  required int y,
+  int z = 0, // optional parameter
+}) {
+  int acc = x + y + z;
 
+  if (acc % 2 == 0) {
+    print('짝수입니다');
+  } else {
+    print('홀수입니다');
+  }
+}
+```
+
+파라미터에 이름을 붙이는 경우에는 순서가 중요하지 않다
+
+# arrow function
+
+```dart
+int addNumbers(int x, {required int y, int z = 0}) => x + y + z;
+```
+
+위와 같이 화살표 함수를 쓸 수 있으며 implicit return 해준다
+
+# typedef
+
+```dart
+void main() {
+  Operation operation = add;
+
+  int result = operation(10, 20, 30); // 60
+
+  operation = subtract;
+
+  int result2 = operation(10, 20, 30); // -40
+
+  int result3 = calculate(30, 40, 50, add); // 120
+}
+
+typedef Operation = int Function(int x, int y, int z);
+
+int add(int x, int y, int z) => x + y + z;
+int subtract(int x, int y, int z) => x - y - z;
+int calculate(int x, int y, int z, Operation operation) {
+  return operation(x, y, z);
+}
+```
 
 ## \*references
 
