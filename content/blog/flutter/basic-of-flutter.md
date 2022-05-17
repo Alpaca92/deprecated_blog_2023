@@ -306,4 +306,4 @@ int calculate(int x, int y, int z, Operation operation) {
 
 ## \*references
 
-1. [[무료 프로그래밍 강의] 1시간만에 끝내는 Dart언어 기본기](https://www.youtube.com/watch?v=3Ck42C2ZCb8&list=LL&index=2&ab_channel=%EC%BD%94%EB%93%9C%ED%8C%A9%ED%86%A0%EB%A6%AC)
+1. [[무료 프로그래밍 강의] 1시간만에 끝내는 Dart언어 기본기](https://www.youtube.com/watch?v=3Ck42C2ZCb8&ab_channel=코드팩토리)
