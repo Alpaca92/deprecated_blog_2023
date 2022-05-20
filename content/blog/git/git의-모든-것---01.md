@@ -27,7 +27,7 @@ git은 `committed`, `modified`, `staged`의 세 가지 상태로 구분되는데
 
 3. `staged` : 현재 수정한 파일을 곧 커밋할 것이라고 표시한 상태
 
-![working tree, staging area, git directory](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/all_of_git_01.png)
+![working tree, staging area, git directory](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_01.png)
 
 git 디렉토리는 git이 프로젝트의 메타데이터와 객체 데이터베이스를 저장하는 곳이다
 
