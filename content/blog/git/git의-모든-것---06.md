@@ -182,3 +182,55 @@ index.html |    1 +
 1 file changed, 1 insertion(+)
 ```
 
+이때 git은 3-way merge를 한다
+
+![커밋 3개를 Merge](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_07.png)
+
+이는 단순히 브랜치 포인터를 최신 커밋으로 옮기는 것이 아니라 3-way merge의 결과를 별도의 커밋으로 만든다
+
+![Merge 커밋](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_07.png)
+
+## 충돌의 기초
+
+머지가 순조롭게 되지 않을 때도 있는데 이를 충돌(comflict)이라고 한다
+
+충돌되는 이유는 일반적으로 머지하는 두 브랜치에서 같은 파일의 한 부분을 동시에 수정하고 머지하려고 하기 때문이다
+
+```sh
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+git이 자동으로 머지를 하지 못해 새 커밋도 생기지 못했다
+
+이렇게 충돌이 발생했을 때 어떤 파일을 머지할 수 없었는지는 `$ git status`로 확인할 수 있다
+
+```sh
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+     both modified:      index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+충돌이 일어난 파일은 **unmerged**에 표시되고 충돌된 부분은 아래와 같이 표시된다
+
+```
+<<<<<<< HEAD:index.html
+<div id="footer">contact : email.support@github.com</div> =======
+<div id="footer">
+ please contact us at support@github.com </div>
+>>>>>>> iss53:index.html
+```
+
+=======위쪽의 내용은 HEAD 버전(위의 예시에서는 master)의 내용이고 아래쪽이 iss53버전임을 알 수 있다
+
+충돌을 해결하려면 위쪽과 아래쪽 중 하나를 선택하거나 새로 작성하여 머지를 해줘야 한다
