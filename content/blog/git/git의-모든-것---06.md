@@ -385,10 +385,62 @@ git에서 한 브랜치를 다른 브랜치르 합치는 방법은 merge와 reba
 
 rebase의 장단점 및 merge와의 차이점을 살펴보자
 
+![나뉜 브랜치를 Merge 하기](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_13.png)
 
+merge의 경우 일반적으로 위와 같이 3-way merge가 이뤄지는데 rebase의 경우는 조금 다르다
 
+![C4의 변경사항을 C3에 적용하는 Rebase 과정](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_14.png)
 
+두 브랜치가 나눠지기 전인 공통 커밋으로 이동하여 그 커밋으로 부터 지금 checkout된 브랜치가 가리키는 커밋까지 diff를 만들어 어딘가에 임시 저장한다(그림에서는 `C4`)
 
+rebase 할 브랜치(experiment)가 합칠 브랜치(master)가 가리키는 커밋을 가리키게 하고 아까 저장해뒀던 변경사항을 차례로 적용한다
+
+그리고 아래와 같이 master 브랜치를 fast-forward하면 끝이다
+
+![master 브랜치를 Fast-forward시키기](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_15.png)
+
+위 설명을 명령화하면 다음과 같다
+
+```sh
+$ git checkout experiment
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command
+
+$ git checkout master
+$ git merge experiment
+```
+
+rebase의 경우 좀 더 깔끔하게 커밋 히스토리를 관리 할 수 있다
+
+이렇듯 rebase는 브랜치의 변경사항을 순서대로 다른 브랜치에 적용하면서 합치고,<br />
+merge는 두 브랜치의 최종 결과만을 가지고 새로운 커밋을 만들어내면서 합친다
+
+또 다른 경우를 보면
+
+![다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_16.png)
+
+브랜치에서 브랜치를 다시 분기하여 조금 복잡한 경우 이때 위의 그림에서 client를 master로 합치고 싶을 경우도 rebase를 사용한다
+
+이를 합치고 fast-forward merge를 해주면 아래와 같은 그림이 되고
+
+![master 브랜치를 client 브랜치 위치로 진행 시키기](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/git/images/evrth_of_git_17.png)
+
+이를 명령화하면 다음과 같다
+
+```sh
+$ git rebase --onto master server client
+$ git checkout master
+$ git merge client
+```
+
+`$ git rebase --onto master server client` 명령은 master, server, client 세 브랜치의 공통 조상까지의 커밋을 client 브랜치에서 없애준다
+
+## rebase의 위험성
+
+`$ git rebase`로 push를 해버리면 다른 팀원들은 다시 한번 머지를 진행한 후 push를 해야한다
+
+이는 쓸데 없는 워크플로우가 더 생기는 것이므로 협업을 할때에 rebase의 사용은 삼가해야 한다
 
 ## \*references
 
