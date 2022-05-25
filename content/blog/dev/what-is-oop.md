@@ -177,7 +177,7 @@ johnny.sayHi()
 
 ## Abstraction(추상화)
 
-`act of specifying a general interface heding implementation details`
+`act of specifying a general interface hiding implementation details`
 
 구현 세부 정보를 숨기는 일반 인터페이스를 지정하는 행위를 추상화라고 한다
 
