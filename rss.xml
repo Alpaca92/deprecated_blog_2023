@@ -1,4 +1,160 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 25 May 2022 09:03:30 GMT</lastBuildDate><item><title><![CDATA[typescript 기초]]></title><description><![CDATA[cra에 ts 템플릿이 있어서 사용해보면서 문법에 대한 이해가 없이 하느라 많은 삽질(?)이 있어서 이참에 배워두려고 강의를 찾아보았다 블로깅은 내가 개발자가 되게 해준 노마드 코더에서 나온 무료강의를 들으면서 작성했다 implicit types vs…]]></description><link>https://alpaca92.github.io/typescript/typescript-syntax/</link><guid isPermaLink="false">https://alpaca92.github.io/typescript/typescript-syntax/</guid><pubDate>Tue, 24 May 2022 08:06:13 GMT</pubDate><content:encoded>&lt;p&gt;cra에 ts 템플릿이 있어서 사용해보면서 문법에 대한 이해가 없이 하느라 많은 삽질(?)이 있어서 이참에 배워두려고 강의를 찾아보았다&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 May 2022 07:03:29 GMT</lastBuildDate><item><title><![CDATA[tsconfig.json 사용하기]]></title><description><![CDATA[ts를 사용하려면 를 사용하여 설정을 해줘야한다 물론 웹팩처럼 next.js, nest.js, CRA…]]></description><link>https://alpaca92.github.io/typescript/what-is-tsconfig.json/</link><guid isPermaLink="false">https://alpaca92.github.io/typescript/what-is-tsconfig.json/</guid><pubDate>Thu, 26 May 2022 10:06:06 GMT</pubDate><content:encoded>&lt;p&gt;ts를 사용하려면 &lt;code class=&quot;language-text&quot;&gt;tsconfig.json&lt;/code&gt;를 사용하여 설정을 해줘야한다&lt;/p&gt;
+&lt;p&gt;물론 웹팩처럼 next.js, nest.js, CRA를 사용하면 알아서 설정을 해주기 때문에 우리가 설정할 일은 거의 없다&lt;/p&gt;
+&lt;p&gt;하지만 가끔은 내가 원하는대로 설정을 변경해줘야 될 수도 있고 해당 설정이 어떤 의미를 가지는 정도는 알아야 된다고 생각하여 정리하게 되었다&lt;/p&gt;
+&lt;h1 id=&quot;include&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#include&quot; aria-label=&quot;include permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;include&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Specifies a list of glob patterns that match files to be included in compilation.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;컴파일의 대상이 되는 파일 이름 혹은 패턴을 배열로 지정하면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;include&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;compileroptions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#compileroptions&quot; aria-label=&quot;compileroptions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;compilerOptions&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Instructs the TypeScript compiler how to compile .ts files.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;.ts파일들의 컴파일 옵션을 설정하는 객체다&lt;/p&gt;
+&lt;h2 id=&quot;outdir&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#outdir&quot; aria-label=&quot;outdir permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;outDir&lt;/h2&gt;
+&lt;p&gt;설정하게 되면 해당 디렉토리로 컴파일된 파일들(&lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;.d.ts&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;.js.map&lt;/code&gt; 등)이 들어간다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;outDir&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;dist&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;컴파일 시 아래와 같은 구조가 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;root
+├── dist
+│   └── index.js
+├── index.ts
+└── tsconfig.json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;target&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#target&quot; aria-label=&quot;target permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;target&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Set the JavaScript language version for emitted JavaScript and include compatible library declarations.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;컴파일 될 js의 버전을 설정한다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;target&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ES6&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;lib&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#lib&quot; aria-label=&quot;lib permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;lib&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Specify a set of bundled library declaration files that describe the target runtime environment.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;ts에게 어떤 API를 사용하고 어떤 환경에서 코드를 실행하는 지를 지정한다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token string&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;lib&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ES6&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DOM&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그런데 ts는 어떻게 어떤 API를 사용하는지 알 수 있는 걸까?&lt;/p&gt;
+&lt;p&gt;이는 &lt;code class=&quot;language-text&quot;&gt;declaration file&lt;/code&gt;을 알아야 한다&lt;/p&gt;
+&lt;h1 id=&quot;declaration-file&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#declaration-file&quot; aria-label=&quot;declaration file permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;declaration file&lt;/h1&gt;
+&lt;p&gt;우리는 개발을 할때 직접 모든 기능을 만들기 보다는 많은 프레임워크, 라이브러리를 사용한다&lt;/p&gt;
+&lt;p&gt;하지만 이러한 패키지들은 기본적으로 js로 만들어진 경우가 많으며 이를 ts환경에서 사용하기 위해서는 js파일과 모듈을 위한 타입정의가 필요하다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;root
+├── src
+│   ├── index.ts
+│   ├── package.js
+│   └── package.d.ts
+└── tsconfig.json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같은 구조라고 할 때 &lt;code class=&quot;language-text&quot;&gt;package.js&lt;/code&gt;가 node_modules안에 있는 어떠한 모듈이라고 가정한다면 &lt;code class=&quot;language-text&quot;&gt;.d.ts&lt;/code&gt;로 해당 모듈을 정의해줘야 한다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 📁./src/package.js&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; code &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 📁./src/package.d.ts&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Config&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  url&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;myPackage&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;config&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Config&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;code&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;정의한 후에는 정상적으로 사용할 수 있게 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 📁./src/index.ts&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; init&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; exit &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;myPackage&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; url&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;some url&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;jsdoc&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#jsdoc&quot; aria-label=&quot;jsdoc permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSDoc&lt;/h1&gt;
+&lt;p&gt;만약 ts와 js를 혼용해서 사용해야하는 경우라면 어떨까?&lt;/p&gt;
+&lt;p&gt;모듈의 경우에는 &lt;code class=&quot;language-text&quot;&gt;.d.ts&lt;/code&gt;로 모든 것들의 정의 파일이 작성되어테지만 이전의 나의 프로젝트에 ts를 더하는 거라면 그렇지 않을 것이다&lt;/p&gt;
+&lt;p&gt;장기적인 관점에서는 마이그레이션(migration)을 하는 것이 좋지만 일단 몇천줄의 js코드를 당장에 마이그레이션할 순 없지만 일단 ts를 사용하고 싶다면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;allowJs&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;js를 사용할 수 있게 해주면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;root
+├── src
+│   ├── index.ts
+│   ├── package.js
+└── tsconfig.json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(&lt;code class=&quot;language-text&quot;&gt;.d.ts&lt;/code&gt;파일은 모듈의 경우이므로 이 상황에서는 없다)&lt;/p&gt;
+&lt;p&gt;allowJs를 true로 하면 이제 js코드를 ts에서 사용할 수 있는데 대부분의 타입들은 추론할 수 없는 것들이므로 any타입으로 되어있다&lt;/p&gt;
+&lt;p&gt;js파일에 타입체크를 하기 위해서는&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 📁./src/package.js&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// @ts-check&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; code &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@ts-check&lt;/code&gt;를 추가하고 &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html&quot;&gt;JSDoc&lt;/a&gt;을 사용하면 된다&lt;/p&gt;
+&lt;p&gt;JSDoc의 문법대로 코멘트를 작성하면 ts가 이를 읽고 타입을 추론해준다&lt;/p&gt;
+&lt;p&gt;JSDoc은 코멘트로 작성되기 때문에 코드에 추가하더라도 오류가 발생하지 않는다는 장점이 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 📁./src/package.js&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// @ts-check&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/**
+ * 여기에 코드에 대한 설명을 적는다
+ * @param { object } config 파라미터에 대한 설명
+ * @param { boolean } config.debug
+ * @param { string } config.url
+ * @returns { boolean } 리턴값에 대한 설명
+ */&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/**
+ * 여디고 코드에 대한 설명을 적는다
+ * @param { number } code 파라미터에 대한 설명
+ * @returns { number } 리턴값에 대한 설명
+ */&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; code &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;definitelytyped&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#definitelytyped&quot; aria-label=&quot;definitelytyped permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DefinitelyTyped&lt;/h1&gt;
+&lt;p&gt;어떤 패키지를 사용하다보면 &lt;code class=&quot;language-text&quot;&gt;Cannot find module &apos;package name&apos; or its corresponding type declarations.&lt;/code&gt;라는 에러를 많이 접하게 될텐데 이는 &lt;code class=&quot;language-text&quot;&gt;.d.ts&lt;/code&gt;가 없는 패키지 즉, js로 된 패키지라는 말이다&lt;/p&gt;
+&lt;p&gt;이를 해결하기 위해 해당 패키지를 보면서 스스로 &lt;code class=&quot;language-text&quot;&gt;.d.ts&lt;/code&gt;를 작성해야 한다면 패키지를 사용하는 장점히 상당히 희석 될 것이다&lt;/p&gt;
+&lt;p&gt;따라서 이를 해결해주기 위해 &lt;a href=&quot;https://github.com/DefinitelyTyped/DefinitelyTyped&quot;&gt;DefinitelyTyped&lt;/a&gt;가 탄생했다&lt;/p&gt;
+&lt;p&gt;이 repository에는 다양한 패키지들의 declaration files가 작성되어 있다&lt;/p&gt;
+&lt;p&gt;패키지의 정의 파일을 받아 적용하고 싶다면 아래와 같은 명령을 실행하면 된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# 패키지 다운로드
+$ npm i ${패키지 명}
+
+# 패키지의 정의 파일 다운로드
+$ npm i -D @types/${패키지 명}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📌최근에는 처음부터 정의 파일을 포함한 패키지가 많아지고 있기 때문에 해당 오류가 없을 수도 있다&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;references&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;*references&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://nomadcoders.co/typescript-for-beginners&quot;&gt;Typescript로 블록체인 만들기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/tsconfig#include&quot;&gt;tsconfig: include&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/tsconfig#outDir&quot;&gt;tsconfig: outDir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/tsconfig#target&quot;&gt;tsconfig: target&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/tsconfig#lib&quot;&gt;tsconfig: lib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html&quot;&gt;JSDoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[typescript 기초]]></title><description><![CDATA[cra에 ts 템플릿이 있어서 사용해보면서 문법에 대한 이해가 없이 하느라 많은 삽질(?)이 있어서 이참에 배워두려고 강의를 찾아보았다 블로깅은 내가 개발자가 되게 해준 노마드 코더에서 나온 무료강의를 들으면서 작성했다 implicit types vs…]]></description><link>https://alpaca92.github.io/typescript/typescript-syntax/</link><guid isPermaLink="false">https://alpaca92.github.io/typescript/typescript-syntax/</guid><pubDate>Tue, 24 May 2022 08:06:13 GMT</pubDate><content:encoded>&lt;p&gt;cra에 ts 템플릿이 있어서 사용해보면서 문법에 대한 이해가 없이 하느라 많은 삽질(?)이 있어서 이참에 배워두려고 강의를 찾아보았다&lt;/p&gt;
 &lt;p&gt;블로깅은 내가 개발자가 되게 해준 &lt;a href=&quot;https://nomadcoders.co/&quot;&gt;노마드 코더&lt;/a&gt;에서 나온 무료강의를 들으면서 작성했다&lt;/p&gt;
 &lt;h1 id=&quot;implicit-types-vs-explicit-types&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#implicit-types-vs-explicit-types&quot; aria-label=&quot;implicit types vs explicit types permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;implicit types vs explicit types&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;hello&apos;&lt;/span&gt;
