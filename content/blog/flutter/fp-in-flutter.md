@@ -44,10 +44,8 @@ void main() {
 
 이렇게 list에서 map, set으로 map과 set을 list로 자유롭게 형변환이 가능하다
 
-> 📌 `Set.from()` vs `toSet()`의 차이점<br />
-<br />
-`toSet()` 메서드를 사용하면 해당 타입을 읽어오지만 `Set.from()` 생성자의 경우는 타입을 명시해줘야한다<br />
-ex. Set<String>.from(someList);
+> 📌 `Set.from()` vs `toSet()`의 차이점<br /> > <br /> > `toSet()` 메서드를 사용하면 해당 타입을 읽어오지만 `Set.from()` 생성자의 경우는 타입을 명시해줘야한다<br />
+> ex. Set<String>.from(someList);
 
 ## map
 
@@ -191,17 +189,121 @@ void main() {
 }
 ```
 
+단, reduce를 사용할 때 실행 대상이 되는 데이터의 타입과 반환되는 데이터의 타입이 동일해야만 한다
 
+```dart
+void main() {
+  List<String> words = [
+    '안녕하세요 ',
+    '저는 ',
+    'ayaan 입니다'
+  ];
 
+  final length = words.reduce((prev, next) => prev.length + next.length);
+  // error: The return type 'int' is not a 'String' as required by the closure's context
+}
+```
 
+## fold
 
+reduce와 비슷하지만 initial value를 지정하고 제너릭으로 타입을 지정할 수 있다
 
+```dart
+void main() {
+  List<int> = numbers = [1, 3, 5, 7, 9];
 
+  final sum = numbers.fold<int>(0, (prev, next) => prev + next);
 
+  print(sum); // 25
+}
+```
 
+## spread operator
 
+iterable한 데이터 값을 개별로 분리 할 수 있다 _[ref](https://dart.dev/guides/language/language-tour#spread-operator)_
 
+```dart
+void main() {
+  List<int> even = [2, 4, 6, 8];
+  List<int> odd = [1, 3, 5, 7];
 
+  print([...even, ...odd]);
+  // [2, 4, 6, 8, 1, 3, 5, 7]
+}
+```
+
+## 결론
+
+위에서 배웠던 것들을 종합하여 사용해 본다면 이래와 같다
+
+```dart
+void main() {
+  final List<Map<String, String>> people = [
+    {
+      'name': '지수',
+      'group': '블랙핑크',
+    },
+    {
+      'name': '로제',
+      'group': '블랙핑크',
+    },
+    {
+      'name': 'RM',
+      'group': 'BTS',
+    },
+    {
+      'name': '뷔',
+      'group': 'BTS',
+    },
+  ];
+
+  final parsedPeople = people.map(
+    (x) => Person(
+      name: x['name']!,
+      group: x['group']!,
+    ),
+  ).toList();
+
+  print(parsedPeople);
+  /*
+    [
+      Person(name: 지수, group: 블랙핑크),
+      Person(name: 로제, group: 블랙핑크),
+      Person(name: RM, group: BTS),
+      Person(name: 뷔, group: BTS)
+    ]
+  */
+
+  final bts = parsedPeople.where(
+    (x) => x.group == 'BTS',
+  ).toList();
+
+  print(bts);
+  /*
+    [
+      Person(name: RM, group: BTS),
+      Person(name: 뷔, group: BTS)
+    ]
+  */
+}
+
+class Person {
+  final String name;
+  final String group;
+
+  Person({
+    required this.name,
+    required this.group,
+  });
+
+  @override
+  String toString() {
+    return 'Person(name: $name, group: $group)';
+  }
+}
+```
+
+FP의 가장 큰 장점은 `map(...).where(...).fold<int>(...)` 이런식으로 여러 함수들은 체이닝(chaining)하여 사용할 수 있다는 점이다
 
 ## \*references
 
@@ -218,3 +320,7 @@ void main() {
 6. [where method](https://api.dart.dev/stable/2.17.1/dart-core/Iterable/where.html)
 
 7. [reduce method](https://api.dart.dev/stable/2.17.1/dart-core/Iterable/reduce.html)
+
+8. [fold<T> method](https://api.dart.dev/stable/2.17.1/dart-core/Iterable/fold.html)
+
+9. [operators](https://dart.dev/guides/language/language-tour#operators)
