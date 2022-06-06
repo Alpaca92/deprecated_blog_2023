@@ -1,5 +1,5 @@
 ---
-title: 플러터의 객체지향프로그래밍(OOP)
+title: 플러터의 객체지향 프로그래밍(OOP)
 date: 2022-05-17 13:05:45
 category: flutter
 draft: false
