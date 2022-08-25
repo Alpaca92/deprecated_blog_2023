@@ -33,7 +33,39 @@ _Progressive Web App is a special class of web apps that allow the user to inter
 
 2. 웹사이트를 이용하였기 때문에 SEO 측면에서 이점을 갖는다
 
-3. 
+3. `PWA`는 웹사이트를 기반으로 만들어진 앱이기 때문에 [CMS](https://www.oracle.com/kr/content-management/what-is-cms/)가 가능하다
+
+## PWA의 장점
+
+1. `PWA`는 네이티브 앱과 유사하게 생겼기 때문에 유저에게 친숙한 UX/UI를 제공한다
+
+2. 각 OS(Android, iOS 등)에 대응하는 앱을 따로따로 만들지 않아도 되므로 개발시 많은 자원을 아낄 수 있다
+
+3. 네이티브 앱과 마찬가지로 GPS, 카메라, 마이크 등 기기의 기능을 접근, 사용할 수 있다
+
+4. 앱 개발시 평균 70~90% 정도 개발비용이 절약된다
+
+5. 네이티브 앱과 다르게 설치, 실행이 빠르다
+
+6. Apple Store, Google Play에 앱 등록이 필요하지 않다
+
+7. 앱 사용을 위한 지속적인 인터넷 연결이 필요하지 않다(캐싱 방법에 따라 다름)
+
+8. 앱 업데이트가 필요하지 않다
+
+![PWA의 사용자, 비즈니스적 장점](https://raw.githubusercontent.com/Alpaca92/alpaca92.github.io/master/content/blog/dev/images/pwa_progressive_01.jpeg)
+
+## PWA의 단점
+
+1. 현재 iOS 기기에서는 PWA의 일부 기능을 지원하지 않는다 [참고](https://firt.dev/notes/pwa-ios/)
+
+2. 지문인식, 근접 센서 사용 불가 등 기기의 기능을 제한적으로밖에 상요할 수 없다
+
+3. 더 많은 베터리를 사용한다
+
+4. 몇 주간 해당 앱을 접속하지 않는다면 유저의 캐시가 모두 삭제된다
+
+5. 기기 설정을 통해서만 홈 화면에 수동으로 앱 아이콘을 추가할 수 있다
 
 ## \*references
 
