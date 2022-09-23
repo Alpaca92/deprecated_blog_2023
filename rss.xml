@@ -1,4 +1,537 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 25 Aug 2022 23:54:47 GMT</lastBuildDate><item><title><![CDATA[PWA(Progressive Web App)이란?]]></title><description><![CDATA[앱을 만드는 방법은 다양하다 , 를 사용하여 native app을 만드는 방법도 있고, 나 를 사용하여 만드는 방법도 있다 오늘은 그 중 에 대해 알아보고자 한다 PWA Progressive Web App is a special class of web…]]></description><link>https://alpaca92.github.io/dev/what-is-pwa/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/what-is-pwa/</guid><pubDate>Fri, 22 Jul 2022 08:07:04 GMT</pubDate><content:encoded>&lt;p&gt;앱을 만드는 방법은 다양하다&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 23 Sep 2022 09:14:39 GMT</lastBuildDate><item><title><![CDATA[Recoil 기본]]></title><description><![CDATA[은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다 Recoil lets you create a data-flow graph that flows from atoms…]]></description><link>https://alpaca92.github.io/react/recoil-기본/</link><guid isPermaLink="false">https://alpaca92.github.io/react/recoil-기본/</guid><pubDate>Sun, 18 Sep 2022 11:09:12 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Recoil&lt;/code&gt;은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recoil lets you create a data-flow graph that flows from atoms (shared state) through selectors (pure functions) and down into your React components.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;즉, Recoil은 원자(atom, 공유 상태)에서 selector(순수 함수)를 거쳐 리엑트 컴포넌트로 흐르는 데이터 플로우를 만들어 준다&lt;/p&gt;
+&lt;p&gt;원자(atom)는 리엑트 컴포넌트가 구독(subscribe)할 수 있는 상태 단위이며, selector는 이 상태를 동기/비동기식으로 변환한다&lt;/p&gt;
+&lt;h1 id=&quot;recoil-root&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#recoil-root&quot; aria-label=&quot;recoil root permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Recoil Root&lt;/h1&gt;
+&lt;p&gt;여러 개의 Root가 공존할 수 있으며, atom state의 독립적인 공급자/저장소를 나타낼 수 있다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; RecoilRoot &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;recoil&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;RecoilRoot&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;someComponents &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;RecoilRoot&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;atom&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#atom&quot; aria-label=&quot;atom permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;atom&lt;/h1&gt;
+&lt;p&gt;atom은 recoil에서 상태를 정의하는 방법이다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; todoState &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;atom&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  key&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;todo&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;상태를 정의할 때는 고유값인 key를 설정하고, 기본값(default value)를 설정하면 된다&lt;/p&gt;
+&lt;p&gt;이렇게 정의한 atom은 &lt;code class=&quot;language-text&quot;&gt;useRecoilValue&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;useSetRecoilState&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;useRecoilState&lt;/code&gt; hook으로 사용할 수 있게 된다&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;useRecoilValue&lt;/code&gt;: 상태 값만 필요한 경우에 사용한다&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;useSetRecoilState&lt;/code&gt;: 상태를 업데이트하는 함수만 필요한 경우 사용된다&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;useRecoilState&lt;/code&gt;: &lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt;와 같이 첫번째 원소는 상태를 두번째 원소는 상태를 업데이트하는 함수를 반환한다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;selector&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#selector&quot; aria-label=&quot;selector permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;selector&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Selectors represent a function, or derived state in Recoil. You can think of them as similar to an “idempotent” or “pure function” without side-effects that always returns the same value for a given set of dependency values.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;selector는 파생된 상태(derived state)의 조각을 나타낸다고 말하는데 이는 위의 예시 &lt;code class=&quot;language-text&quot;&gt;todo&lt;/code&gt;에서 사용자에 의해 조작된 값을 반환해줄 수 있기 때문이다&lt;/p&gt;
+&lt;p&gt;즉, selector는 recoil에서 관리하는 상태의 특정 부분만 선택하거나 상태를 사용하여 연산한 값을 조회할때에도 사용하면서 다른 데이터에 의존하는 동적 데이터를 구축할 수 있게 해주는 역할을 한다&lt;/p&gt;
+&lt;h2 id=&quot;get&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#get&quot; aria-label=&quot;get permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;get&lt;/h2&gt;
+&lt;p&gt;get을 사용하여 상태(atom 혹은 다른 selector)를 조회할 수 있는 읽기전용 selector를 만들 수 있다&lt;/p&gt;
+&lt;p&gt;읽기 전용이기 때문에 &lt;code class=&quot;language-text&quot;&gt;useRecoilState&lt;/code&gt;는 사용할 수 없고 &lt;code class=&quot;language-text&quot;&gt;useRecoilValue&lt;/code&gt;로만 상태를 조회해야 한다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; fontSizeLabelState &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  key&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;fontSizeLabelState&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token function-variable function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; get &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; fontSize &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;fontSizeState&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; unit &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;px&apos;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;fontSize&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;unit&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;set&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#set&quot; aria-label=&quot;set permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;set&lt;/h2&gt;
+&lt;p&gt;get과 함께 set을 사용하면 읽고 쓰기가 모두 가능한 selector를 사용할 수 있다&lt;/p&gt;
+&lt;p&gt;이 selector는 값을 매개변수로 수신하고 이를 사용하여 데이터 흐름 그래프를 따라 업스트림으로 변경 사항을 전파할 수 있다&lt;/p&gt;
+&lt;p&gt;또한, 읽고 쓰기가 가능한 selector이기 때문에 &lt;code class=&quot;language-text&quot;&gt;useRecoilState&lt;/code&gt;사용이 가능하다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; proxySelector &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  key&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;proxySelector&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token function-variable function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; get &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myAtom&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; extraField&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token function-variable function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; set &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; set &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; newValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myAtom&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; newValue&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;userecoilcallbackcallback-deps&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#userecoilcallbackcallback-deps&quot; aria-label=&quot;userecoilcallbackcallback deps permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;useRecoilCallback(callback, deps)&lt;/h1&gt;
+&lt;h2 id=&quot;references&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;*references&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://code-masterjung.tistory.com/128&quot;&gt;Recoil 기초 개념 및 사용법&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://recoiljs.org/docs/introduction/installation&quot;&gt;Recoil Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://taegon.kim/archives/10126&quot;&gt;Recoil 레시피: 스냅샷과 상태 모니터링&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[React Flux pattern]]></title><description><![CDATA[React를 공부하다보면 자연스럽게 MVC와 Flux에 대해 듣게된다 그 중 오늘은 Flux에 대해 알아보도록 하자 Flux의 출현배경 기존에 사용되고 있던 MVC 패턴은 Model에 데이터를 정의해두고, Controller를 이용해 Model…]]></description><link>https://alpaca92.github.io/react/react-flux-pattern/</link><guid isPermaLink="false">https://alpaca92.github.io/react/react-flux-pattern/</guid><pubDate>Fri, 02 Sep 2022 09:10:09 GMT</pubDate><content:encoded>&lt;p&gt;React를 공부하다보면 자연스럽게 MVC와 Flux에 대해 듣게된다&lt;/p&gt;
+&lt;p&gt;그 중 오늘은 Flux에 대해 알아보도록 하자&lt;/p&gt;
+&lt;h1 id=&quot;flux의-출현배경&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#flux%EC%9D%98-%EC%B6%9C%ED%98%84%EB%B0%B0%EA%B2%BD&quot; aria-label=&quot;flux의 출현배경 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Flux의 출현배경&lt;/h1&gt;
+&lt;p&gt;기존에 사용되고 있던 MVC 패턴은 Model에 데이터를 정의해두고, Controller를 이용해 Model의 데이터를 CRUD하고, 변경된 데이터는 View layer에 출력하여 사용자에게 전달하였다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 752px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 22.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAcgSg//EABcQAAMBAAAAAAAAAAAAAAAAAAACMUH/2gAIAQEAAQUCNa//xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGRABAAIDAAAAAAAAAAAAAAAAAQARITFx/9oACAEBAAE/IYNDFxXoHJ//2gAMAwEAAgADAAAAEHQf/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAEx/9oACAEDAQE/EKw//8QAFhEAAwAAAAAAAAAAAAAAAAAAAAEx/9oACAECAQE/EHBQ/8QAGRAAAgMBAAAAAAAAAAAAAAAAAREAITFB/9oACAEBAAE/EHQoRxRDh7AOFXAQn//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;MVC 패턴&quot;
+        title=&quot;MVC 패턴&quot;
+        src=&quot;/static/30c69389c251e3bc919bbc9608a12efc/49b61/flux_01.jpg&quot;
+        srcset=&quot;/static/30c69389c251e3bc919bbc9608a12efc/f93b5/flux_01.jpg 300w,
+/static/30c69389c251e3bc919bbc9608a12efc/b4294/flux_01.jpg 600w,
+/static/30c69389c251e3bc919bbc9608a12efc/49b61/flux_01.jpg 752w&quot;
+        sizes=&quot;(max-width: 752px) 100vw, 752px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이 패턴의 문제점은 어플리케이션의 규모가 커질수록 데이터의 흐름이 매우 복잡해진다는 점이다&lt;/p&gt;
+&lt;p&gt;이 문제점 중 가장 잘 알려져 있는 것이 facebook notification 버그다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAdsZXMFpP//EABkQAAIDAQAAAAAAAAAAAAAAABARAAECMf/aAAgBAQABBQJhS+ZH/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BR//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/AVf/xAAWEAADAAAAAAAAAAAAAAAAAAAAIFH/2gAIAQEABj8CIv8A/8QAGhABAQEAAwEAAAAAAAAAAAAAASEAEBFRwf/aAAgBAQABPyGiug/GE43n23zj/9oADAMBAAIAAwAAABDvz//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAEDAQE/EKP/xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAgEBPxCD/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARITEQQf/aAAgBAQABPxBG5vwLgXwMbSFKAl4tkJzOXEWy475//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;facebook notification&quot;
+        title=&quot;facebook notification&quot;
+        src=&quot;/static/c0a151210c5b66c8561a46596660dc79/b4294/flux_02.jpg&quot;
+        srcset=&quot;/static/c0a151210c5b66c8561a46596660dc79/f93b5/flux_02.jpg 300w,
+/static/c0a151210c5b66c8561a46596660dc79/b4294/flux_02.jpg 600w&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;facebook에 로그인 했을 때 화면 위의 메세지 아이콘에 알림이 떠 있지만, 그 메세지 아이콘을 클릭해서 들어가보면 아무런 메세지가 없던 적이 있었을 것이다&lt;/p&gt;
+&lt;p&gt;알림은 사라지겠지만 몇 분 뒤 알림이 다시 나타나고 여전히 아무런 메세지도 나타나지 않는다&lt;/p&gt;
+&lt;p&gt;이 사이클이 계속반복되는 버그가 바로 facebook notification 버그였다&lt;/p&gt;
+&lt;p&gt;facebook팀은 이 버그를 고쳤지만 얼마동안 지나고나면 다시 나타났다&lt;/p&gt;
+&lt;p&gt;이렇게 문제가 생기고 고치는 뫼비우스의 띠는 끝이 보이지 않았다&lt;/p&gt;
+&lt;p&gt;그래서 facebook에서는 단기적인 해결책이 아닌 시스템을 더욱 예측가능하게 만들어 문제점을 완전히 없애고 싶어했다&lt;/p&gt;
+&lt;h1 id=&quot;근본적인-문제점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B7%BC%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%AC%B8%EC%A0%9C%EC%A0%90&quot; aria-label=&quot;근본적인 문제점 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;근본적인 문제점&lt;/h1&gt;
+&lt;p&gt;facebook이 찾은 근본적인 문제점은 &lt;code class=&quot;language-text&quot;&gt;데이터 흐름&lt;/code&gt;에 있었다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAdsMwE//xAAZEAEAAgMAAAAAAAAAAAAAAAAAARESIjH/2gAIAQEAAQUC2dVDFK4f/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Amk3/8QAGxAAAgIDAQAAAAAAAAAAAAAAAAERITFhoVH/2gAIAQEAAT8hnwOEt8NvDMUylBqH/9oADAMBAAIAAwAAABA//wD/xAAWEQEBAQAAAAAAAAAAAAAAAAAAIUH/2gAIAQMBAT8Quo//xAAWEQEBAQAAAAAAAAAAAAAAAAAAIUH/2gAIAQIBAT8QmK//xAAdEAACAwACAwAAAAAAAAAAAAABEQAhQYGRMaHB/9oACAEBAAE/EA+84NlocnyscfY8DCo7gIM3XuMZYK+ZQNx1P//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;단순한 MVC 모식도&quot;
+        title=&quot;단순한 MVC 모식도&quot;
+        src=&quot;/static/9eef59148c5d592542a73d57e5b549af/b4294/flux_03.jpg&quot;
+        srcset=&quot;/static/9eef59148c5d592542a73d57e5b549af/f93b5/flux_03.jpg 300w,
+/static/9eef59148c5d592542a73d57e5b549af/b4294/flux_03.jpg 600w&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이전에는 데이터를 가지고 있는 model이 rendering하기 위해 view layer로 데이터를 보냈다&lt;/p&gt;
+&lt;p&gt;사용자와의 상호작용이 view를 통해 일어나기 때문에 사용자의 입력에 따라 가끔 view가 model을 업데이트해야 할 필요가 있었다&lt;/p&gt;
+&lt;p&gt;이러한 일들이 매우 많이 일어난다면 마치 산사태처럼 아주 많은 변경들이 일어나게되고 이 변경들은 예측불가능할 것이다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 76.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAAB2lSRkCz/xAAZEAEAAwEBAAAAAAAAAAAAAAAAARExAhL/2gAIAQEAAQUCvpqoeWLh/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxABAAMAAAAAAAAAAAAAAAAAACAhMf/aAAgBAQAGPwJcMf/EABwQAAICAgMAAAAAAAAAAAAAAAARAWEhMXGBof/aAAgBAQABPyGgauXSLfDmS9swVD//2gAMAwEAAgADAAAAENP/AP/EABYRAQEBAAAAAAAAAAAAAAAAAAAhQf/aAAgBAwEBPxC6j//EABYRAQEBAAAAAAAAAAAAAAAAAAAhQf/aAAgBAgEBPxCYr//EAB8QAQACAgEFAQAAAAAAAAAAAAEAESExQVGRobHB8P/aAAgBAQABPxAuROC/3mA0HZ7K+y4MkrDzm9t7KqoFQiZL6zAc52n/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;복잡한 MVC 모식도&quot;
+        title=&quot;복잡한 MVC 모식도&quot;
+        src=&quot;/static/aaaf81ad6c6fafb765996b4f6c979e9f/b4294/flux_04.jpg&quot;
+        srcset=&quot;/static/aaaf81ad6c6fafb765996b4f6c979e9f/f93b5/flux_04.jpg 300w,
+/static/aaaf81ad6c6fafb765996b4f6c979e9f/b4294/flux_04.jpg 600w&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이런 변경들이 비동기적으로 일어나거나 하나의 변경이 다수를 변경시킬 수도 있으므로 이는 데이터 흐름을 디버그하기 어렵게 만든다&lt;/p&gt;
+&lt;h1 id=&quot;해결책&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%B4%EA%B2%B0%EC%B1%85&quot; aria-label=&quot;해결책 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;해결책&lt;/h1&gt;
+&lt;p&gt;이를 해결하기 위해 facebook은 다른 종류의 아키텍처를 시도하기로 결정했다&lt;/p&gt;
+&lt;p&gt;이 구조에서 데이터는 단방향으로만 흐르고, 새로운 데이터를 넣으면 처음부터 흐름이 다시 시작된다&lt;/p&gt;
+&lt;p&gt;이 아키텍처를 &lt;code class=&quot;language-text&quot;&gt;Flux&lt;/code&gt;라고 부른다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 630px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 21.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAdilRQP/xAAWEAADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQEAAQUCVP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEABj8Cf//EABcQAQEBAQAAAAAAAAAAAAAAAAERABD/2gAIAQEAAT8hGl4Z/9oADAMBAAIAAwAAABD8P//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/ECf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABACERQWHB/9oACAEBAAE/EEFWoZ7BsKvGuxAr2f/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Flux 패턴&quot;
+        title=&quot;Flux 패턴&quot;
+        src=&quot;/static/c3ccba372d32008a4b8aa4661ea00003/828fb/flux_05.jpg&quot;
+        srcset=&quot;/static/c3ccba372d32008a4b8aa4661ea00003/f93b5/flux_05.jpg 300w,
+/static/c3ccba372d32008a4b8aa4661ea00003/b4294/flux_05.jpg 600w,
+/static/c3ccba372d32008a4b8aa4661ea00003/828fb/flux_05.jpg 630w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이제부터 위 다이어그램의 구성요소들을 하나하나 살펴보도록 하자&lt;/p&gt;
+&lt;h2 id=&quot;action&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#action&quot; aria-label=&quot;action permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Action&lt;/h2&gt;
+&lt;p&gt;액션 생성자(the action creator)는 모든 변경사항과 사용자와의 상호작용이 거쳐가야 하는 액션의 생성을 담당하고 있다&lt;/p&gt;
+&lt;p&gt;언제든 어플리케이션의 상태를 변경하거나 view를 업데이트하고 싶다면 액션을 생성해야만 한다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 488px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 73.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBBAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHdXKkbQBX/xAAZEAACAwEAAAAAAAAAAAAAAAABAgAQESH/2gAIAQEAAQUCJyKw2MOrX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAZEAADAAMAAAAAAAAAAAAAAAAAEBEBMUH/2gAIAQEABj8C0RYLxf/EABoQAQACAwEAAAAAAAAAAAAAAAEAERAhQVH/2gAIAQEAAT8hdatGVdxdquBED6oMf//aAAwDAQACAAMAAAAQK8//xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8QV2f/xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPxACP//EAB8QAQEAAQMFAQAAAAAAAAAAAAERIQAQQTFRYXHB0f/aAAgBAQABPxDJAhWOqxsdIiPke/zYXJg55yfujgiaAYs97f/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Action creator&quot;
+        title=&quot;Action creator&quot;
+        src=&quot;/static/d2f90f62de8f6a6b5663d013f21f6b23/155ab/flux_06.jpg&quot;
+        srcset=&quot;/static/d2f90f62de8f6a6b5663d013f21f6b23/f93b5/flux_06.jpg 300w,
+/static/d2f90f62de8f6a6b5663d013f21f6b23/155ab/flux_06.jpg 488w&quot;
+        sizes=&quot;(max-width: 488px) 100vw, 488px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;액션 생성자가 하는 일은 마치 전보기사(telegraph operator)와 같다&lt;/p&gt;
+&lt;p&gt;무슨 메세지를 보낼지 알려주는 액션 생성자는 나머지 시스템이 이해할 수 있는 양식(format)으로 바꿔준다&lt;br /&gt;
+(마치 전보기사가 알파벳을 기계들이 처리할 수 있는 모스부호로 바꾸는 것 처럼)&lt;/p&gt;
+&lt;p&gt;액션 생성자는 타입(type)과 페이로드(payload)를 포함한 액션을 생성한다&lt;/p&gt;
+&lt;p&gt;타입은 시스템에 정의된 액션들(일반적으로 상수들) 중의 하나이다&lt;/p&gt;
+&lt;p&gt;일단 액션 생성자가 액션 메세지를 생성한 뒤에는 디스패처(dispatcher)에게 넘겨준다&lt;/p&gt;
+&lt;h2 id=&quot;dispatcher&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#dispatcher&quot; aria-label=&quot;dispatcher permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dispatcher&lt;/h2&gt;
+&lt;p&gt;디스패처는 기본적으로 콜백(callback)이 등록되어 있는 곳이다&lt;/p&gt;
+&lt;p&gt;이것은 마치 전화 교환대에서 교환원이 일하는 것과 같다&lt;br /&gt;
+(전화 교환대에서는 등록된 모든 전화들과의 연결이 가능하다)&lt;/p&gt;
+&lt;p&gt;디스패처는 액션을 보낼 필요가 있는 모든 스토어(store)를 가지고 있고, 액션 생성자로부터 액션이 넘어오면 여러 스토어에 액션을 보낸다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 574px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAATABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCAQX/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgD/2gAMAwEAAhADEAAAAfa5aLOmCXkFbBv/xAAaEAACAgMAAAAAAAAAAAAAAAAAARAREiIx/9oACAEBAAEFAjg5cVtij//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABgQAAIDAAAAAAAAAAAAAAAAAAAgATEy/9oACAEBAAY/AtJCUf/EABwQAAEEAwEAAAAAAAAAAAAAAAEAEBFxITFRof/aAAgBAQABPyEoLQVb1idbR5YgYcZf/9oADAMBAAIAAwAAABDs/wA//8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAEDAQE/EEyWbC//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QHYItb//EAB0QAQADAAIDAQAAAAAAAAAAAAEAESExURBBscH/2gAIAQEAAT8QCCiei5xPIrL1L2Kkpado8RKDpPz9igpar34RIwYDXMsqw1mz/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Dispatcher&quot;
+        title=&quot;Dispatcher&quot;
+        src=&quot;/static/e0d34150d86b0d2661ea3b0d1d775b24/b5079/flux_07.jpg&quot;
+        srcset=&quot;/static/e0d34150d86b0d2661ea3b0d1d775b24/f93b5/flux_07.jpg 300w,
+/static/e0d34150d86b0d2661ea3b0d1d775b24/b5079/flux_07.jpg 574w&quot;
+        sizes=&quot;(max-width: 574px) 100vw, 574px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이 처리는 동기적으로(synchronously) 실행된다&lt;/p&gt;
+&lt;p&gt;만약 스토어들 사이에 의존성(dependency)이 있어서 하나를 다른 것보다 먼저 업데이트해야 한다면 &lt;code class=&quot;language-text&quot;&gt;async/await&lt;/code&gt;를 사용하여 디스패처가 적절히 처리하도록 할 수 있다&lt;/p&gt;
+&lt;p&gt;Flux의 디스패처가 다른 아키텍처들과 조금 다른점이 있는데 이는 바로 액션 타입과는 상관없이 등록된 모든 스토어에 보내진다는 것이다&lt;/p&gt;
+&lt;p&gt;즉, 스토어가 특정 액션만 구독(subscribe)하지 않고 모든 액션을 일단 받은 뒤 처리할지 말지를 결정한다는 뜻이다&lt;/p&gt;
+&lt;h2 id=&quot;store&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#store&quot; aria-label=&quot;store permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Store&lt;/h2&gt;
+&lt;p&gt;스토어는 어플리케이션 내의 모든 상태, 그리고 관련된 로직을 가지고 있다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 548px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMCBAX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAd5Ui5WWA//EABkQAAIDAQAAAAAAAAAAAAAAAAABAhARMf/aAAgBAQABBQJ8YzImRr//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFH/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8BV//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABsQAAICAwEAAAAAAAAAAAAAAAERACEQMVGh/9oACAEBAAE/ISTS1kQL15OihRSx/9oADAMBAAIAAwAAABDM/wD/xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8QdZ//xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QMJ//xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhYRAx0UH/2gAIAQEAAT8Qsh8nZYUHBqW+ryDlGwuF3AVzX0O+P//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Store&quot;
+        title=&quot;Store&quot;
+        src=&quot;/static/c8b4e843383195745ce7405356de87f1/a8866/flux_08.jpg&quot;
+        srcset=&quot;/static/c8b4e843383195745ce7405356de87f1/f93b5/flux_08.jpg 300w,
+/static/c8b4e843383195745ce7405356de87f1/a8866/flux_08.jpg 548w&quot;
+        sizes=&quot;(max-width: 548px) 100vw, 548px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;스토어는 마치 모든 것을 관리하는 관리자와 같다&lt;/p&gt;
+&lt;p&gt;모든 상태 변경은 반드시 스토어에 의해서 결정되어야만 하며, 상태 변경을 위한 요청을 스토어에 직접 보낼 순 없다&lt;/p&gt;
+&lt;p&gt;스토어에는 setter가 존재하지 않으므로 상태 변경을 요청하기 위해서는 반드시 모든 정해진 절차를 따라야만 한다&lt;/p&gt;
+&lt;p&gt;즉, 무조건 액션 생성자와 디스패처 파이프라인을 거쳐서 액션을 보내야 한다&lt;/p&gt;
+&lt;p&gt;앞에서 설명했듯이, 스토어가 디스패처에 등록되어 있다면 모든 액션을 받게 될 것이다&lt;/p&gt;
+&lt;p&gt;스토어의 내부에서는 보통 &lt;code class=&quot;language-text&quot;&gt;switch statement&lt;/code&gt;를 사용해서 처리할 액션과 무시할 액션을 결정하게 된다&lt;/p&gt;
+&lt;p&gt;만약 처리가 필요한 액션이라면 주어진 액션에 따라 무엇을 할지 결정하고 상태를 변경한다&lt;/p&gt;
+&lt;p&gt;스토어에 상태변경이 완료되면 변경 이벤트(change event)를 내보낸다&lt;/p&gt;
+&lt;p&gt;이 이벤트는 컨트롤러 뷰(the controller view)에 상태가 변경됐다는 것을 알려준다&lt;/p&gt;
+&lt;h2 id=&quot;view&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#view&quot; aria-label=&quot;view permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;View&lt;/h2&gt;
+&lt;p&gt;뷰는 상태를 가져오고 유저에게 보여주고 입력받을 화면을 렌더링하는 역할을 맡는다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 421px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 110.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAWABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAAB7WlIpqlZpIViGf/EABkQAAIDAQAAAAAAAAAAAAAAAAERABAxAv/aAAgBAQABBQLilBpbEAo7/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAAMAAAAAAAAAAAAAAAAAECAxQf/aAAgBAQAGPwIwuP8A/8QAHRAAAgICAwEAAAAAAAAAAAAAAREAITFRQWFxgf/aAAgBAQABPyEETjR77j9luGGbhox8iD4aUBtoXLGdwjMqU//aAAwDAQACAAMAAAAQzzj9/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERMf/aAAgBAwEBPxBOIhB6f//EABcRAAMBAAAAAAAAAAAAAAAAAAABETH/2gAIAQIBAT8QarKUWH//xAAdEAEBAAMAAwEBAAAAAAAAAAABEQAhMUFRYXGx/9oACAEBAAE/EHtaJDyMTeRZZjSeATNfeGnOxvr3+ZoII6Tu0cR7wRO/cEQC0j6yuj2T9wP1Nz//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;view&quot;
+        title=&quot;view&quot;
+        src=&quot;/static/38287a5da79972e5292c1f4c017c71be/5c51b/flux_09.jpg&quot;
+        srcset=&quot;/static/38287a5da79972e5292c1f4c017c71be/f93b5/flux_09.jpg 300w,
+/static/38287a5da79972e5292c1f4c017c71be/5c51b/flux_09.jpg 421w&quot;
+        sizes=&quot;(max-width: 421px) 100vw, 421px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;뷰는 발표자와 같다&lt;/p&gt;
+&lt;p&gt;앱 내부에 대해서는 아는 것이 없지만 받은 데이터를 잘 처리해서 사람들이 이해할 수 있는 format(HTML)으로 어떻게 바꾸는지 알고 있다&lt;/p&gt;
+&lt;h2 id=&quot;controller-view&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#controller-view&quot; aria-label=&quot;controller view permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Controller view&lt;/h2&gt;
+&lt;p&gt;컨트롤러 뷰는 스토어와 뷰 사이의 중간관리자 역할을 한다&lt;/p&gt;
+&lt;p&gt;상태가 변경되었을 때 스토어가 그 사실을 컨트롤러 뷰에게 알려주면 컨트롤러 뷰는 자신의 아래에 있는 모든 뷰에게 새로운 상태를 넘겨준다&lt;/p&gt;
+&lt;h1 id=&quot;어떻게-함께-동작할까&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%A8%EA%BB%98-%EB%8F%99%EC%9E%91%ED%95%A0%EA%B9%8C&quot; aria-label=&quot;어떻게 함께 동작할까 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;어떻게 함께 동작할까?&lt;/h1&gt;
+&lt;p&gt;이제 어떻게 &lt;code class=&quot;language-text&quot;&gt;Action&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Dispatcher&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Store&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Controller view and View&lt;/code&gt;가 함께 동작하는지 알아보도록 하자&lt;/p&gt;
+&lt;h2 id=&quot;준비setup&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A4%80%EB%B9%84setup&quot; aria-label=&quot;준비setup permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;준비(Setup)&lt;/h2&gt;
+&lt;p&gt;준비과정은 앱이 초기화할 때 딱 한 번 거치는 과정이다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAdypJYL/xAAYEAACAwAAAAAAAAAAAAAAAAAAARAyQv/aAAgBAQABBQKdKx//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEABj8Cgr//xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQESFB/9oACAEBAAE/IbphwIdJUJ1eY//aAAwDAQACAAMAAAAQsN//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAEBAQEBAQAAAAAAAAAAAAABEQBRMRD/2gAIAQEAAT8QVb5+dwSKvblB7oCBCZCGgIfP/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;setup_01&quot;
+        title=&quot;setup_01&quot;
+        src=&quot;/static/e9ed87c067c795a9aa069383a32f3044/9dbcf/flux_10.jpg&quot;
+        srcset=&quot;/static/e9ed87c067c795a9aa069383a32f3044/f93b5/flux_10.jpg 300w,
+/static/e9ed87c067c795a9aa069383a32f3044/b4294/flux_10.jpg 600w,
+/static/e9ed87c067c795a9aa069383a32f3044/9dbcf/flux_10.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;스토어는 디스패처에 액션이 들어오면 알려달라고 말해둔다&lt;/li&gt;
+&lt;li&gt;컨트롤러 뷰는 스토어에게 최신 상태를 묻는다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAHdgS4L/8QAGhAAAQUBAAAAAAAAAAAAAAAAAAEQITEyQv/aAAgBAQABBQKyW6TR/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAARAg/9oACAEBAAY/AoK//8QAGxAAAgEFAAAAAAAAAAAAAAAAAAEQESExQcH/2gAIAQEAAT8hroyxCwcSP//aAAwDAQACAAMAAAAQMN//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMVEQcf/aAAgBAQABPxBVgj5ua147FYeygAYISiqmKOef/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;setup_03&quot;
+        title=&quot;setup_03&quot;
+        src=&quot;/static/e8e3e81bf5f56a325eee910347308a47/9dbcf/flux_11.jpg&quot;
+        srcset=&quot;/static/e8e3e81bf5f56a325eee910347308a47/f93b5/flux_11.jpg 300w,
+/static/e8e3e81bf5f56a325eee910347308a47/b4294/flux_11.jpg 600w,
+/static/e8e3e81bf5f56a325eee910347308a47/9dbcf/flux_11.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;스토어가 컨트롤러 뷰에게 상태를 주면 렌더링하기 위해 모든 자식 뷰에게 상태를 넘겨준다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAHdgS4L/8QAGhAAAQUBAAAAAAAAAAAAAAAAAAEQITEyQv/aAAgBAQABBQKyW6TR/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAARAg/9oACAEBAAY/AoK//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAERQRBxwf/aAAgBAQABPyGaMUNFHGR//9oADAMBAAIAAwAAABAw3//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABwQAQACAgMBAAAAAAAAAAAAAAEAESFREDFBcf/aAAgBAQABPxBVgD53PSKNsGw7lAAwQlFVMUa4/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;setup_04&quot;
+        title=&quot;setup_04&quot;
+        src=&quot;/static/590d1087d765071580cdddf045798dac/9dbcf/flux_12.jpg&quot;
+        srcset=&quot;/static/590d1087d765071580cdddf045798dac/f93b5/flux_12.jpg 300w,
+/static/590d1087d765071580cdddf045798dac/b4294/flux_12.jpg 600w,
+/static/590d1087d765071580cdddf045798dac/9dbcf/flux_12.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;컨트롤러 뷰는 스토어에게 상태가 바뀔 때 알려달라고 다시 부탁한다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;데이터의-흐름data-flow&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%ED%9D%90%EB%A6%84data-flow&quot; aria-label=&quot;데이터의 흐름data flow permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;데이터의 흐름(Data flow)&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAe6hNKH/xAAYEAACAwAAAAAAAAAAAAAAAAAAARAyQv/aAAgBAQABBQKdKx//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEABj8Cgr//xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQEUEh/9oACAEBAAE/IX2mUE28JUJ1cx//2gAMAwEAAgADAAAAEODP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRABAQEBAQEAAAAAAAAAAAAAAREAUSGB/9oACAEBAAE/EHEL57i2K9uoCCJ3QECEyENAQ03/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;data flow&quot;
+        title=&quot;data flow&quot;
+        src=&quot;/static/df3962ae239a98eb8cd0270f2cbdc5f4/9dbcf/flux_13.jpg&quot;
+        srcset=&quot;/static/df3962ae239a98eb8cd0270f2cbdc5f4/f93b5/flux_13.jpg 300w,
+/static/df3962ae239a98eb8cd0270f2cbdc5f4/b4294/flux_13.jpg 600w,
+/static/df3962ae239a98eb8cd0270f2cbdc5f4/9dbcf/flux_13.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;준비 과정이 끝나면 앱은 유저들의 입력 위한 준비가 완료된다&lt;/p&gt;
+&lt;p&gt;유저의 입력으로 인한 액션이 생긴다면 다음과 같은 데이터 흐름을 만든다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAHupE0Bf//EABcQAAMBAAAAAAAAAAAAAAAAAAAQQjH/2gAIAQEAAQUCMVUf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhAAAwAAAAAAAAAAAAAAAAAAARAg/9oACAEBAAY/AoK//8QAGBABAQEBAQAAAAAAAAAAAAAAAREAMRD/2gAIAQEAAT8hW8dwYaeCoXQ3/9oADAMBAAIAAwAAABDwH//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQACAgMAAAAAAAAAAAAAAAEAESExQVGB/9oACAEBAAE/ENEvIXYtOYAPcoAGCokCrGIBoC5//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;data flow_01&quot;
+        title=&quot;data flow_01&quot;
+        src=&quot;/static/e8cfe73e3a80ae355bb5e4b7f2c1e972/9dbcf/flux_14.jpg&quot;
+        srcset=&quot;/static/e8cfe73e3a80ae355bb5e4b7f2c1e972/f93b5/flux_14.jpg 300w,
+/static/e8cfe73e3a80ae355bb5e4b7f2c1e972/b4294/flux_14.jpg 600w,
+/static/e8cfe73e3a80ae355bb5e4b7f2c1e972/9dbcf/flux_14.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;뷰는 액션 생성자에게 액션을 준비하라고 말한다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHuoqmoH//EABgQAAIDAAAAAAAAAAAAAAAAAAAxARBB/9oACAEBAAEFAhVsM//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABsQAAICAwEAAAAAAAAAAAAAAAABIUEQETFR/9oACAEBAAE/IW98ZQocQ8Jtj//aAAwDAQACAAMAAAAQ0M//xAAVEQEBAAAAAAAAAAAAAAAAAAAQYf/aAAgBAwEBPxCn/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qh//EABwQAQADAAIDAAAAAAAAAAAAAAEAETEhURBBgf/aAAgBAQABPxDCXyDQXft7g2HuG3GuJfkIIZ4//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;data flow_02&quot;
+        title=&quot;data flow_02&quot;
+        src=&quot;/static/1aad0f2dbfa619332f154d79ff136e57/9dbcf/flux_15.jpg&quot;
+        srcset=&quot;/static/1aad0f2dbfa619332f154d79ff136e57/f93b5/flux_15.jpg 300w,
+/static/1aad0f2dbfa619332f154d79ff136e57/b4294/flux_15.jpg 600w,
+/static/1aad0f2dbfa619332f154d79ff136e57/9dbcf/flux_15.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;액션 생성자는 액션을 포맷에 맞게 만들어 디스패처에 넘겨준다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB3GopaAX/xAAYEAACAwAAAAAAAAAAAAAAAAAAMQEQQf/aAAgBAQABBQIVbDP/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAaEAADAQADAAAAAAAAAAAAAAAAASExEBFR/9oACAEBAAE/Idb6MIWDk+FteP/aAAwDAQACAAMAAAAQ0N//xAAWEQADAAAAAAAAAAAAAAAAAAAQESH/2gAIAQMBAT8QdH//xAAWEQADAAAAAAAAAAAAAAAAAAAQESH/2gAIAQIBAT8QUH//xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMUEQUf/aAAgBAQABPxBdQcsysLyFOxWH7BZptiNBYGmjz//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;data flow_03&quot;
+        title=&quot;data flow_03&quot;
+        src=&quot;/static/340acb35f797a3d15c011780908c543d/9dbcf/flux_16.jpg&quot;
+        srcset=&quot;/static/340acb35f797a3d15c011780908c543d/f93b5/flux_16.jpg 300w,
+/static/340acb35f797a3d15c011780908c543d/b4294/flux_16.jpg 600w,
+/static/340acb35f797a3d15c011780908c543d/9dbcf/flux_16.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;디스패처가 들어온 액션의 순서에 따라 알맞은 스토어에 보내면, 각 스토어는 모든 액션을 받게 되지만 필요한 액션만을 골라 상태를 변경한다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB7sKpqC//xAAYEAADAQEAAAAAAAAAAAAAAAAAATEQQf/aAAgBAQABBQKizqp//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAAMBAQAAAAAAAAAAAAAAAQAhMRBR/9oACAEBAAE/IVwRJpUMjVfJdXz/2gAMAwEAAgADAAAAEFDf/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Qp//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/EIf/xAAbEAEBAAIDAQAAAAAAAAAAAAABEQAxECFBUf/aAAgBAQABPxChQh7u4kiA9tuKh+4KabdY0FAxhx//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;data flow_04&quot;
+        title=&quot;data flow_04&quot;
+        src=&quot;/static/ec7fb67898680cfe44a7754a1f301b80/9dbcf/flux_17.jpg&quot;
+        srcset=&quot;/static/ec7fb67898680cfe44a7754a1f301b80/f93b5/flux_17.jpg 300w,
+/static/ec7fb67898680cfe44a7754a1f301b80/b4294/flux_17.jpg 600w,
+/static/ec7fb67898680cfe44a7754a1f301b80/9dbcf/flux_17.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;상태 변경이 완료되면 스토어는 자신을 구독(subscribe)하고 있는 컨트롤러 뷰에게 그 사실을 알린다&lt;/li&gt;
+&lt;li&gt;연락을 받은 컨트롤러 뷰들은 스토어에게 변경된 상태를 요청한다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 631px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHuyRnUD//EABgQAAMBAQAAAAAAAAAAAAAAAAABMRAh/9oACAEBAAEFAjuOqn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAbEAEAAgIDAAAAAAAAAAAAAAABACEQETFRgf/aAAgBAQABPyFd0TYOPYWSlOo1WP/aAAwDAQACAAMAAAAQLN//xAAWEQADAAAAAAAAAAAAAAAAAAAQESH/2gAIAQMBAT8QdH//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCH/8QAHBABAAICAwEAAAAAAAAAAAAAAQARITEQQVFh/9oACAEBAAE/EEaoHu7lkCx2zcVD7PjbQSuhrB1x/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;data flow_06&quot;
+        title=&quot;data flow_06&quot;
+        src=&quot;/static/86260c659c4c5138b64b5b951553e0f5/9dbcf/flux_18.jpg&quot;
+        srcset=&quot;/static/86260c659c4c5138b64b5b951553e0f5/f93b5/flux_18.jpg 300w,
+/static/86260c659c4c5138b64b5b951553e0f5/b4294/flux_18.jpg 600w,
+/static/86260c659c4c5138b64b5b951553e0f5/9dbcf/flux_18.jpg 631w&quot;
+        sizes=&quot;(max-width: 631px) 100vw, 631px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;스토어가 새로운 상태를 넘겨주면, 컨트롤러 뷰는 자신 아래의 모든 뷰에게 새로운 상태에 맞게 렌더링하라고 알린다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;references&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;*references&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://bestalign.github.io/translation/cartoon-guide-to-flux/&quot;&gt;Flux로의 카툰 안내서&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.huskyhoochu.com/flux-architecture/&quot;&gt;‘데이터가 폭포수처럼 흘러내려’ React의 flux 패턴&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[자바스크립트에 대하여 (1)]]></title><description><![CDATA[자바스크립트를 메인 언어로 사용하기로 마음먹은지 1년 6개월 정도가 지났다 하지만 아직도 자바스크립트에 대해 깊게 공부해본 경험이 없다 올해 하반기에는 자바스크립트에 대해 보다 깊고 명확하게 이해해 보려고 한다 이 포스팅은 Modern…]]></description><link>https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/</guid><pubDate>Wed, 31 Aug 2022 22:08:02 GMT</pubDate><content:encoded>&lt;p&gt;자바스크립트를 메인 언어로 사용하기로 마음먹은지 1년 6개월 정도가 지났다&lt;/p&gt;
+&lt;p&gt;하지만 아직도 자바스크립트에 대해 깊게 공부해본 경험이 없다&lt;/p&gt;
+&lt;p&gt;올해 하반기에는 자바스크립트에 대해 보다 깊고 명확하게 이해해 보려고 한다&lt;/p&gt;
+&lt;p&gt;이 포스팅은 &lt;a href=&quot;http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;#x26;barcode=9791158392239&quot;&gt;Modern Javascript Deep Dive&lt;/a&gt;, &lt;a href=&quot;https://javascript.info/&quot;&gt;The Modern Javascript Tutorial&lt;/a&gt;을 기반으로 작성하려고 한다&lt;/p&gt;</content:encoded></item><item><title><![CDATA[PWA(Progressive Web App)이란?]]></title><description><![CDATA[앱을 만드는 방법은 다양하다 , 를 사용하여 native app을 만드는 방법도 있고, 나 를 사용하여 만드는 방법도 있다 오늘은 그 중 에 대해 알아보고자 한다 PWA Progressive Web App is a special class of web…]]></description><link>https://alpaca92.github.io/dev/what-is-pwa/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/what-is-pwa/</guid><pubDate>Fri, 22 Jul 2022 08:07:04 GMT</pubDate><content:encoded>&lt;p&gt;앱을 만드는 방법은 다양하다&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;swift&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;java&lt;/code&gt;를 사용하여 native app을 만드는 방법도 있고, &lt;code class=&quot;language-text&quot;&gt;react-native&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;flutter&lt;/code&gt;를 사용하여 만드는 방법도 있다&lt;/p&gt;
 &lt;p&gt;오늘은 그 중 &lt;code class=&quot;language-text&quot;&gt;PWA&lt;/code&gt;에 대해 알아보고자 한다&lt;/p&gt;
 &lt;h1 id=&quot;pwa&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#pwa&quot; aria-label=&quot;pwa permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PWA&lt;/h1&gt;
@@ -328,7 +861,7 @@ fi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=rk41rBXq3zQ&amp;#x26;ab_channel=%EC%BD%94%EB%93%9C%ED%8C%A9%ED%86%A0%EB%A6%AC&quot;&gt;[무료 프로그래밍 강의] 40분만에 끝내는 비동기 프로그래밍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://dart.dev/codelabs/async-await#what-is-a-future&quot;&gt;What is a future&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[git의 모든 것 - 7]]></title><link>https://alpaca92.github.io/git/git의-모든-것---07/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git의-모든-것---07/</guid><pubDate>Fri, 27 May 2022 13:05:46 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[플러터의 함수형 프로그래밍(FP)]]></title><description><![CDATA[개인적으로 함수형 프로그래밍(functional programming)은 OOP에 비하면 쉽다고 생각한다 그래도 flutter에서는 어떤식으로 사용되어지고 있는지 알 필요가 있으니 정리를 해두도록 하자 형변환 이렇게 list에서 map, set…]]></description><link>https://alpaca92.github.io/flutter/fp-in-flutter/</link><guid isPermaLink="false">https://alpaca92.github.io/flutter/fp-in-flutter/</guid><pubDate>Fri, 27 May 2022 08:05:05 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 함수형 프로그래밍(functional programming)은 OOP에 비하면 쉽다고 생각한다&lt;/p&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[플러터의 함수형 프로그래밍(FP)]]></title><description><![CDATA[개인적으로 함수형 프로그래밍(functional programming)은 OOP에 비하면 쉽다고 생각한다 그래도 flutter에서는 어떤식으로 사용되어지고 있는지 알 필요가 있으니 정리를 해두도록 하자 형변환 이렇게 list에서 map, set…]]></description><link>https://alpaca92.github.io/flutter/fp-in-flutter/</link><guid isPermaLink="false">https://alpaca92.github.io/flutter/fp-in-flutter/</guid><pubDate>Fri, 27 May 2022 08:05:05 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 함수형 프로그래밍(functional programming)은 OOP에 비하면 쉽다고 생각한다&lt;/p&gt;
 &lt;p&gt;그래도 flutter에서는 어떤식으로 사용되어지고 있는지 알 필요가 있으니 정리를 해두도록 하자&lt;/p&gt;
 &lt;h1 id=&quot;형변환&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%98%95%EB%B3%80%ED%99%98&quot; aria-label=&quot;형변환 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;형변환&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;dart&quot;&gt;&lt;pre class=&quot;language-dart&quot;&gt;&lt;code class=&quot;language-dart&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
