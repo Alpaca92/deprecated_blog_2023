@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 23 Sep 2022 09:14:39 GMT</lastBuildDate><item><title><![CDATA[Recoil 기본]]></title><description><![CDATA[은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다 Recoil lets you create a data-flow graph that flows from atoms…]]></description><link>https://alpaca92.github.io/react/recoil-기본/</link><guid isPermaLink="false">https://alpaca92.github.io/react/recoil-기본/</guid><pubDate>Sun, 18 Sep 2022 11:09:12 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Recoil&lt;/code&gt;은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 01 Oct 2022 11:10:04 GMT</lastBuildDate><item><title><![CDATA[git pull]]></title><description><![CDATA[최근에 을 하면 멋대로 머지 내역을 커밋하여 로그가 쓸데없이 많아지고 있다 혼자서 관리중인 repository라면 상관없겠지만 업무용 repository라면 다른 팀원들이 이 때문에 불편을 겪을 수 있다 현재 `git pull…]]></description><link>https://alpaca92.github.io/git/git-pull/</link><guid isPermaLink="false">https://alpaca92.github.io/git/git-pull/</guid><pubDate>Tue, 27 Sep 2022 08:10:05 GMT</pubDate><content:encoded>&lt;p&gt;최근에 &lt;code class=&quot;language-text&quot;&gt;git pull&lt;/code&gt;을 하면 멋대로 머지 내역을 커밋하여 로그가 쓸데없이 많아지고 있다&lt;/p&gt;
+&lt;p&gt;혼자서 관리중인 repository라면 상관없겠지만 업무용 repository라면 다른 팀원들이 이 때문에 불편을 겪을 수 있다&lt;/p&gt;
+&lt;p&gt;현재 `git pull을 하면 아래와 같은 메세지가 계속 출력된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ git pull
+
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint:
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace &amp;quot;git config&amp;quot; with &amp;quot;git config --global&amp;quot; to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그리고 커밋메세지도 함께 작성된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;Merge branch &amp;#39;some_branch&amp;#39; of *** into some_branch&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이는 원격 저장소와 로컬 저장소 모두 새로운 커밋을 가지고 있을 때 &lt;code class=&quot;language-text&quot;&gt;Non fast-forward&lt;/code&gt;가 발생하기 때문이다&lt;/p&gt;
+&lt;p&gt;이러한 병합 커밋을 만들지 않으려면 &lt;code class=&quot;language-text&quot;&gt;--rebase&lt;/code&gt;옵션으로 병합을 시키면 된다(단, 이때 스테이징되지 않은 변경사항이 있으면 안된다)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;git pull --rebase&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이를 매번 하는 것은 귀찮으니 글로벌 설정에 &lt;code class=&quot;language-text&quot;&gt;--rebase&lt;/code&gt;옵션을 넣어주면 앞으로 &lt;code class=&quot;language-text&quot;&gt;git pull&lt;/code&gt;만으로도 동일한 일을 수행할 수 있게된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;gitconfig --global pull.rebase ture&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;references&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;*references&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15439527/git-why-merge-branch-master-of-when-pull-and-push&quot;&gt;git: Why “Merge branch ‘master’ of … ”? when pull and push&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://parksb.github.io/article/28.html&quot;&gt;Git 사용 중 자주 만나는 이슈 정리&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Recoil 기본]]></title><description><![CDATA[은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다 Recoil lets you create a data-flow graph that flows from atoms…]]></description><link>https://alpaca92.github.io/react/recoil-기본/</link><guid isPermaLink="false">https://alpaca92.github.io/react/recoil-기본/</guid><pubDate>Sun, 18 Sep 2022 11:09:12 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Recoil&lt;/code&gt;은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Recoil lets you create a data-flow graph that flows from atoms (shared state) through selectors (pure functions) and down into your React components.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -528,10 +556,242 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://bestalign.github.io/translation/cartoon-guide-to-flux/&quot;&gt;Flux로의 카툰 안내서&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.huskyhoochu.com/flux-architecture/&quot;&gt;‘데이터가 폭포수처럼 흘러내려’ React의 flux 패턴&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[자바스크립트에 대하여 (1)]]></title><description><![CDATA[자바스크립트를 메인 언어로 사용하기로 마음먹은지 1년 6개월 정도가 지났다 하지만 아직도 자바스크립트에 대해 깊게 공부해본 경험이 없다 올해 하반기에는 자바스크립트에 대해 보다 깊고 명확하게 이해해 보려고 한다 이 포스팅은 Modern…]]></description><link>https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/</guid><pubDate>Wed, 31 Aug 2022 22:08:02 GMT</pubDate><content:encoded>&lt;p&gt;자바스크립트를 메인 언어로 사용하기로 마음먹은지 1년 6개월 정도가 지났다&lt;/p&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[자바스크립트에 대하여 (1) - 동기, 비동기처리]]></title><description><![CDATA[자바스크립트를 메인 언어로 사용하기로 마음먹은지 1년 6개월 정도가 지났다 하지만 아직도 자바스크립트에 대해 깊게 공부해본 경험이 없다 올해 하반기에는 자바스크립트에 대해 보다 깊고 명확하게 이해해 보려고 한다 이 포스팅은 Modern…]]></description><link>https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/</guid><pubDate>Wed, 31 Aug 2022 22:08:02 GMT</pubDate><content:encoded>&lt;p&gt;자바스크립트를 메인 언어로 사용하기로 마음먹은지 1년 6개월 정도가 지났다&lt;/p&gt;
 &lt;p&gt;하지만 아직도 자바스크립트에 대해 깊게 공부해본 경험이 없다&lt;/p&gt;
 &lt;p&gt;올해 하반기에는 자바스크립트에 대해 보다 깊고 명확하게 이해해 보려고 한다&lt;/p&gt;
-&lt;p&gt;이 포스팅은 &lt;a href=&quot;http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;#x26;barcode=9791158392239&quot;&gt;Modern Javascript Deep Dive&lt;/a&gt;, &lt;a href=&quot;https://javascript.info/&quot;&gt;The Modern Javascript Tutorial&lt;/a&gt;을 기반으로 작성하려고 한다&lt;/p&gt;</content:encoded></item><item><title><![CDATA[PWA(Progressive Web App)이란?]]></title><description><![CDATA[앱을 만드는 방법은 다양하다 , 를 사용하여 native app을 만드는 방법도 있고, 나 를 사용하여 만드는 방법도 있다 오늘은 그 중 에 대해 알아보고자 한다 PWA Progressive Web App is a special class of web…]]></description><link>https://alpaca92.github.io/dev/what-is-pwa/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/what-is-pwa/</guid><pubDate>Fri, 22 Jul 2022 08:07:04 GMT</pubDate><content:encoded>&lt;p&gt;앱을 만드는 방법은 다양하다&lt;/p&gt;
+&lt;p&gt;이 포스팅은 &lt;a href=&quot;http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;#x26;barcode=9791158392239&quot;&gt;Modern Javascript Deep Dive&lt;/a&gt;, &lt;a href=&quot;https://javascript.info/&quot;&gt;The Modern Javascript Tutorial&lt;/a&gt;을 기반으로 작성하려고 한다&lt;/p&gt;
+&lt;p&gt;오늘은 동기, 비동기에 대해 정리해보고자 한다&lt;/p&gt;
+&lt;h1 id=&quot;동기-처리와-비동기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8F%99%EA%B8%B0-%EC%B2%98%EB%A6%AC%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0&quot; aria-label=&quot;동기 처리와 비동기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;동기 처리와 비동기&lt;/h1&gt;
+&lt;p&gt;함수를 호출하면 함수 코드가 평가되어 함수 &lt;code class=&quot;language-text&quot;&gt;실행 컨텍스트&lt;/code&gt;가 생성된다&lt;/p&gt;
+&lt;p&gt;이때 생성된 함수 실행 컨텍스트는 실행 컨텍스트 스택(콜 스택)에 푸시되고 함수코드가 실행된다&lt;/p&gt;
+&lt;p&gt;함수 코드의 실행이 종료되면 함수 실행 컨텍스트는 실행 컨텍스트 스택에서 팝되어 제거된다&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* call stack */&lt;/span&gt;
+
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;global execution context&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;foo is executing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;foo has finished executing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;bar is executing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;bar has finished executing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;baz is executing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;baz has finished executing&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;program successfully executed&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// global execution context&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// baz is executing&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// bar is executing&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// foo is executing&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// foo has finished executing&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// bar has finished executing&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// baz has finished executing&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// program successfully executed&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAd5UBX//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAaEAACAwEBAAAAAAAAAAAAAAAAARExUSGB/9oACAEBAAE/IZs9FXXJCwhYVR//2gAMAwEAAgADAAAAEIgP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAIAQIBAT8QR//EABsQAQADAQEBAQAAAAAAAAAAAAEAESExUUFh/9oACAEBAAE/EH5IV6TVM1XKhSlj2dsb3OzYaZhkAFAD8n//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;콜 스택&quot;
+        title=&quot;콜 스택&quot;
+        src=&quot;/static/2371d302639ea239a52842bf3a1800e8/e5166/sync_and_async_01.jpg&quot;
+        srcset=&quot;/static/2371d302639ea239a52842bf3a1800e8/f93b5/sync_and_async_01.jpg 300w,
+/static/2371d302639ea239a52842bf3a1800e8/b4294/sync_and_async_01.jpg 600w,
+/static/2371d302639ea239a52842bf3a1800e8/e5166/sync_and_async_01.jpg 1200w,
+/static/2371d302639ea239a52842bf3a1800e8/f46db/sync_and_async_01.jpg 1357w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;여기서 중요한 사실은 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;자바스크립트 엔진은 단 하나의 콜 스택&lt;/code&gt;&lt;/strong&gt;을 갖는다는 것이다&lt;/p&gt;
+&lt;p&gt;이는 함수를 실행할 수 있는 창구가 단 하나이며, 2개 이상의 함수를 동시에 실행할 수 없다는 것을 의미한다&lt;/p&gt;
+&lt;p&gt;콜스택의 최상위 요소인 ‘실행 중인 실행 컨텍스트’를 제외한 모든 실행 컨텍스트는 모두 태스크(task)들이다&lt;/p&gt;
+&lt;p&gt;태스크들은 현재 실행중인 실행 컨텍스트가 pop되어 콜스택에서 제거되면 비로소 실행되기 시작한다&lt;/p&gt;
+&lt;p&gt;이처럼 자바스크립트 엔진은 한 번에 하나의 태스크만 실행할 수 있는 &lt;code class=&quot;language-text&quot;&gt;single thread&lt;/code&gt;방식으로 동작한다&lt;/p&gt;
+&lt;p&gt;싱글 스레드 방식은 한 번에 하나의 태스크만 실행할 수 있기 때문에 처리 시간이 걸리는 태스크를 실행하는 경우 &lt;strong&gt;블로킹(blocking, 작업 중단)&lt;/strong&gt;이 발생한다&lt;/p&gt;
+&lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;함수와 유사하게 일정 시간이 경과한 이후 콜백 함수를 호출하는 함수를 구현해 보도록 하자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;callback&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; delay&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; delayUntil &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Date&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; delay&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Date&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; delayUntil&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;foo&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;bar&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;foo&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// foo * many times&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// after 3sec or more&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// bar&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 &lt;code class=&quot;language-text&quot;&gt;bar&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;sleep&lt;/code&gt;에 의해 3초 이상(3초 + foo함수의 실행시간) 호출되지 못하는 블로킹(작업 중단) 상태가 된다&lt;/p&gt;
+&lt;p&gt;이처럼 현재 실행 중인 태스크가 종료할 때까지 다음에 실행될 태스크가 대기하는 방식을 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;동기(synchronous) 처리&lt;/code&gt;&lt;/strong&gt;라고 한다&lt;/p&gt;
+&lt;p&gt;동기 처리를 하게되면 실행 순서가 보장되지만 앞선 태스크가 종료할 때까지 이후 태스크들이 블로킹된다는 단점도 분명하다&lt;/p&gt;
+&lt;p&gt;이번엔 &lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;을 사용해 보도록 하자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;foo&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;bar&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;foo&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// bar&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// after 3 sec&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// foo&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;함수는 앞서 살펴본 sleep함수와 유사하게 일정 시간이 경과한 후 콜백 함수를 호출하지만 &lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;은 이후의 태스크를 블로킹하지 않고 곧바로 실행한다&lt;/p&gt;
+&lt;p&gt;이처럼 현재 실행 중인 태스크가 종료되지 않은 상태라해도 다음 태스크를 곧바로 실행하는 방식을 &lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;비동기(asynchronous) 처리&lt;/code&gt;&lt;/strong&gt;라고 한다&lt;/p&gt;
+&lt;p&gt;비동기 처리 방식은 현재 실행 중인 태스크가 종료되지 않은 상태라 해도 다음 태스크를 곧바로 실행하므로 블로킹이 발생하지 않지만 태스크들의 실행 순서를 보장하지 않는 단점이 있다&lt;/p&gt;
+&lt;p&gt;위 예시에서 봤듯이 비동기 처리를 수행하는 비동기 함수는 전통적으로 콜백 패턴을 사용한다&lt;/p&gt;
+&lt;p&gt;하지만 비동기 처리를 위한 콜백 패턴은 콜백 지옥(callback hell)을 발생시켜 가독성을 나쁘게 하고, 비동기 처리 중 발생한 에러의 예외 처리가 곤란하며, 여러개의 비동기 처리를 한번에 처리하는 데도 한계가 있다&lt;/p&gt;
+&lt;p&gt;이를 계선한 것이 바로 &lt;code class=&quot;language-text&quot;&gt;프로미스(Promise)&lt;/code&gt;이다&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;타이머 함수인 &lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;setInterval&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;HTTP Request&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Event handler&lt;/code&gt;는 비동기 처리 방식으로 동작한다&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이제 비동기 처리에 깊은 관계가 있는 이벤트 루프(event loop), 태스크 큐(task queue)에 대해 알아보자&lt;/p&gt;
+&lt;h1 id=&quot;이벤트-루프와-태스크-큐&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84%EC%99%80-%ED%83%9C%EC%8A%A4%ED%81%AC-%ED%81%90&quot; aria-label=&quot;이벤트 루프와 태스크 큐 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;이벤트 루프와 태스크 큐&lt;/h1&gt;
+&lt;p&gt;자바스크립트의 특증 중 하나는 위에서도 언급했듯이 싱글 스레드로 동작한다는 것이다&lt;/p&gt;
+&lt;p&gt;하지만 브라우저가 동작하는 것을 보면 많은 태스크들이 동시에 처리되는 것 처럼 보여 우리를 혼동시킨다&lt;/p&gt;
+&lt;p&gt;예를 들어, HTML 요소가 애니메이션 효과를 통해 움직이면서 이벤트를 처리하기도 하고, HTTP 요청을 통해 서버로부터 데이터를 가지고 오면서 렌더링하기도 한다&lt;/p&gt;
+&lt;p&gt;이처럼 자바스크립트의 동시성(concurrency)을 지원하는 것이 바로 &lt;code class=&quot;language-text&quot;&gt;이벤트 루프(event loop)&lt;/code&gt;다&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1200px;&quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBAgQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHszRgo0Gp//8QAGhAAAwEAAwAAAAAAAAAAAAAAAAERAgMSIf/aAAgBAQABBQKjb651ySMzT0//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwFX/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEQIRIxcf/aAAgBAQAGPwJX0eNlo1P/xAAcEAACAgIDAAAAAAAAAAAAAAAAARExIVFhcdH/2gAIAQEAAT8hlTyJfkVDFN9CQuBAni3Itkf/2gAMAwEAAgADAAAAEKMf/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8QR//EABgRAQEAAwAAAAAAAAAAAAAAAAEAESFB/9oACAECAQE/EDTmS8v/xAAdEAEAAwACAwEAAAAAAAAAAAABABEhMZFBUWFx/9oACAEBAAE/ELxWebIU6gPobt8eo6RBo2Z3Ape+DZu3C2nTTFTG/wBn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;자바스크립트 동작 모식도&quot;
+        title=&quot;자바스크립트 동작 모식도&quot;
+        src=&quot;/static/dacfa859b07f4f3337edcc719af1c211/e5166/sync_and_async_02.jpg&quot;
+        srcset=&quot;/static/dacfa859b07f4f3337edcc719af1c211/f93b5/sync_and_async_02.jpg 300w,
+/static/dacfa859b07f4f3337edcc719af1c211/b4294/sync_and_async_02.jpg 600w,
+/static/dacfa859b07f4f3337edcc719af1c211/e5166/sync_and_async_02.jpg 1200w,
+/static/dacfa859b07f4f3337edcc719af1c211/ac99c/sync_and_async_02.jpg 1536w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이벤트 루프는 브라우저에 내장되어 있는 기능 중 하나인데 보통 위와 같이 표현된다&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;call stack / function execution stack&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;소스코드 평가 과정에서 생성된 실행 컨텍스트가 추가되고 제거되는 스택 자료구조&lt;/p&gt;
+&lt;p&gt;함수를 호출하면 함수 실행 컨텍스트가 순차적으로 콜 스택에 push되어 순차적으로 실행된다&lt;br /&gt;(즉, 선입후출(FILO, First in, Last out)의 구조를 가지고 있다)&lt;/p&gt;
+&lt;p&gt;자바스크립트 엔진은 단 하나의 콜 스택을 사용하기 때문에(싱글 스레드) 최상위 실행 컨텍스트가 종료되어 콜 스택에서 제거(pop)되기 전까지는 다른 어떤 태스크도 실행되지 않는다&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;strong&gt;heap&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;힙은 객체가 저장되는 메모리 공간으로 &lt;code class=&quot;language-text&quot;&gt;memory heap&lt;/code&gt;이라고도 불린다&lt;/p&gt;
+&lt;p&gt;콜 스택의 요소인 실행 컨텍스트는 힙에 저장된 객체를 참조한다&lt;/p&gt;
+&lt;p&gt;메모리에 값을 저장하려면 먼저 값을 저장할 메모리 공간의 크기를 결정해야 하는데 객체는 원시 값과는 달리 크기가 정해져 있지 않으므로 할당해야 할 메모리 공간의 크기를 런타임에 결정(동적 할당)해야 한다&lt;/p&gt;
+&lt;p&gt;따라서 객체가 저장되는 메모리 공간인 힙은 구조화되어 있지 않다는게 특징이다&lt;/p&gt;
+&lt;p&gt;이처럼 &lt;strong&gt;콜 스택과 힙으로 구성되어 있는 자바스크립트 엔진&lt;/strong&gt;은 단순히 태스크가 요청되면 콜 스택을 통해 요청된 작업을 순차적으로 실행할 뿐이다&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;비동기 처리에서 소스코드의 평가와 실행을 제외한 모든 처리는 자바스크립트 엔진을 구동하는 환경인 브라우저 또는 Node.js가 담당한다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;예를 들어, 비동기 방식으로 동작하는 setTimeout의 콜백 함수의 평가와 실행은 자바스크립트 엔진이 담당하지만 호출 스케줄링을 위한 타이머 설정과 콜백 함수의 등록은 브라우저 또는 Node.js가 담당한다&lt;/p&gt;
+&lt;p&gt;이를 위해 브라우저 환경은 태스크 큐(콜백 큐)와 이벤트 루프를 제공한다&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;&lt;strong&gt;task queue / event queue, callback queue&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;setTimeout이나 setInterval과 같은 비동기 함수의 콜백 함수 또는 이벤트 핸들러가 일시적으로 보관되는 영역이다&lt;/p&gt;
+&lt;p&gt;콜백 큐와 별도로 프로미스의 후속 처리 메서드의 콜백 함수가 일시적으로 보관되는 마이크로태스크 큐도 존재한다&lt;/p&gt;
+&lt;p&gt;이에 대해서는 나중에 좀 더 자세히 다뤄보도록 하자&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;strong&gt;event loop&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이벤트 루프는 콜 스택에 현재 실행중인 실행 컨텍스트가 있는지 그리고 콜백 큐에 대기 중인 함수가 있는지 반복해서 확인한다&lt;/p&gt;
+&lt;p&gt;만약 &lt;strong&gt;콜 스택이 비어있고 태스크 큐에 대기 중인 함수가 있다면 이벤트 루프는 순차적(선입 선출(FIFO, First in, First out))으로 콜백 큐에 대기 중인 함수를 콜 스택으로 이동시킨다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;이때 콜 스택으로 이동한 함수는 실행되는데 이는 &lt;strong&gt;콜백 큐에 일시 보관된 함수들은 비동기 처리 방식으로 동작한다는 뜻이다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;이제 브라우저 환경에서 다음 예제가 어떻게 동작할지 상상해보자&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;f1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;f2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;main&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;f1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;0초 뒤에 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;이 실행된다면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// main&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// f1&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// f2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;‘위와 같이 출력되는 것이 아닐까?’ 싶지만 setTimeout의 지연시간이 4ms 이하인 경우 지연시간은 4ms로 지정된다 &lt;a href=&quot;https://stackoverflow.com/questions/9647215/what-is-minimum-millisecond-value-of-settimeout&quot;&gt;ref&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;따라서 출력은 아래와 같을 것이다&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/c7a81b58f4c75c32a0b6503ffa5f8fd1/sync_and_async_03.gif&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// main&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// f2&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// f1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이를 좀 더 구체적으로 살펴본다면&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;전역 코드가 평가되어 전역 실행 컨텍스트가 생성되고 콜 스택에 push된다&lt;/li&gt;
+&lt;li&gt;전역 코드가 실행되기 시작하여 &lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt;함수의 실행 컨텍스트가 생성되고 실행된다&lt;/li&gt;
+&lt;li&gt;콘솔에 &lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt;이 출력되고 &lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;함수가 호출된다&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;함수의 실행 컨텍스트가 생성되고 콜 스택에 push되어 현재 실행 중인 실행 컨텍스트가 된다&lt;br /&gt;브라우저의 Web API(호스트 객체)인 타이머 함수도 함수이므로 실행 컨텍스트를 생성한다&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;함수가 실행되면 콜백 함수를 호출 스케줄링하고 종료되어 콜 스택에서 pop된다&lt;br /&gt;이때 호출 스케줄링, 즉 타이머 설정과 타이머가 만료되면 콜백 함수를 콜백 큐에 push하는 것은 브라우저의 역할이다&lt;/li&gt;
+&lt;li&gt;브라우저가 수행하는 6-1, 자바스크립트 엔진이 수행하는 6-2는 병행 처리된다&lt;br /&gt;
+&lt;br /&gt;
+6-1. 브라우저는 타이머를 설정하고 타이머의 만료를 기다린다&lt;br /&gt;
+4ms후 타이머가 만료되면 콜백 함수 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;가 콜백 큐에 push되어 대기상태가 된다&lt;br /&gt;
+&lt;br /&gt;
+6-2. &lt;code class=&quot;language-text&quot;&gt;f2&lt;/code&gt;함수가 호출되어 실행 컨텍스트가 생성되고 콜 스택에 push되어 현재 실행 중인 실행 컨텍스트가 된다&lt;br /&gt;
+이후 콘솔에 &lt;code class=&quot;language-text&quot;&gt;f2&lt;/code&gt;이 출력되고, &lt;code class=&quot;language-text&quot;&gt;f2&lt;/code&gt;함수가 종료되어 콜 스택에서 pop된다&lt;br /&gt;
+이때 브라우저가 타이머를 설정한 후 4ms가 경과했다면 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;함수는 아직 콜백 큐에서 대기 중이다&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt;함수의 실행 컨텍스트가 종료되고 콜 스택에서 팝된다&lt;br /&gt;이로서 콜 스택에는 아무런 실행 컨텍스트가 존재하지 않게 된다&lt;/li&gt;
+&lt;li&gt;이벤트 루프에 의해 콜 스택이 비어 있음이 감지되고 콜백 큐에서 대기 중인 콜백 함수 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;이 이벤트 루프에 의해 콜 스택에 push된다&lt;br /&gt;다시 말해, 콜백 함수 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;의 실행 컨텍스트가 생성되고 콜 스택에 push되어 현재 실행중인 실행 컨텍스트가 되며, 이후 콘솔에 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;이 출력되고 &lt;code class=&quot;language-text&quot;&gt;f1&lt;/code&gt;함수가 종료되어 콜 스택에서 pop된다&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이처럼 &lt;strong&gt;비동기 함수인 &lt;code class=&quot;language-text&quot;&gt;setTimeout&lt;/code&gt;의 콜백 함수는 콜백 큐에 push되어 대기하다가 콜 스택이 비게되면 비로소 콜 스택에 push되어 실행된다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;다시 말하지만 자바스크립트는 싱글 스레드 방식으로 동작한다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;이때 싱글 스레드 방식으로 동작하는 것은 브라우저에 내장된 ‘자바스크립트 엔진’이지 브라우저 자체가 아님에 주의하자&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;만약 자바스크립트가 모두 자바스크립트 엔진에 의해 싱글 스레드 방식으로 동작한다면 자바스크립트는 비동기로 동작할 수 없다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;즉, 브라우저는 멀티 스레드로 동작한다는 말이다&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;브라우저는 자바스크립트 엔진 외에도 렌더링 엔진과 Web API를 제공한다&lt;/p&gt;
+&lt;p&gt;Web API는 ECMAScript 사양에 정의된 함수가 ㅇ나니라 브라우저에서 제공하는 API이며, DOM API와 타이머 함수, HTTP 요청(Ajax)와 같은 비동기 처리를 포함한다&lt;/p&gt;
+&lt;h2 id=&quot;references&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;*references&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.to/ahmedtahir/what-is-the-execution-context-execution-stack-scope-chain-in-js-26nc&quot;&gt;What is the Execution Context, Execution Stack &amp;#x26; Scope Chain in JS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.freecodecamp.org/news/synchronous-vs-asynchronous-in-javascript/&quot;&gt;Synchronous vs Asynchronous JavaScript – Call Stack, Promises, and More&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[PWA(Progressive Web App)이란?]]></title><description><![CDATA[앱을 만드는 방법은 다양하다 , 를 사용하여 native app을 만드는 방법도 있고, 나 를 사용하여 만드는 방법도 있다 오늘은 그 중 에 대해 알아보고자 한다 PWA Progressive Web App is a special class of web…]]></description><link>https://alpaca92.github.io/dev/what-is-pwa/</link><guid isPermaLink="false">https://alpaca92.github.io/dev/what-is-pwa/</guid><pubDate>Fri, 22 Jul 2022 08:07:04 GMT</pubDate><content:encoded>&lt;p&gt;앱을 만드는 방법은 다양하다&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;swift&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;java&lt;/code&gt;를 사용하여 native app을 만드는 방법도 있고, &lt;code class=&quot;language-text&quot;&gt;react-native&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;flutter&lt;/code&gt;를 사용하여 만드는 방법도 있다&lt;/p&gt;
 &lt;p&gt;오늘은 그 중 &lt;code class=&quot;language-text&quot;&gt;PWA&lt;/code&gt;에 대해 알아보고자 한다&lt;/p&gt;
 &lt;h1 id=&quot;pwa&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#pwa&quot; aria-label=&quot;pwa permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PWA&lt;/h1&gt;
