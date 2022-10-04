@@ -1,5 +1,5 @@
 ---
-title: git pull
+title: git pull할때마다 나오는 hint 해결하기
 date: 2022-09-27 08:09:65
 category: git
 draft: true
@@ -8,6 +8,8 @@ draft: true
 최근에 `git pull`을 하면 멋대로 머지 내역을 커밋하여 로그가 쓸데없이 많아지고 있다
 
 혼자서 관리중인 repository라면 상관없겠지만 업무용 repository라면 다른 팀원들이 이 때문에 불편을 겪을 수 있다
+
+# git pull hint
 
 현재 `git pull을 하면 아래와 같은 메세지가 계속 출력된다
 
@@ -34,7 +36,9 @@ hint: invocation.
 Merge branch 'some_branch' of *** into some_branch
 ```
 
-이는 원격 저장소와 로컬 저장소 모두 새로운 커밋을 가지고 있을 때 `Non fast-forward`가 발생하기 때문이다
+# 해결방법
+
+위 현상은 원격 저장소와 로컬 저장소 모두 새로운 커밋을 가지고 있을 때 `Non fast-forward`가 발생하기 때문이다
 
 이러한 병합 커밋을 만들지 않으려면 `--rebase`옵션으로 병합을 시키면 된다(단, 이때 스테이징되지 않은 변경사항이 있으면 안된다)
 
@@ -47,6 +51,14 @@ git pull --rebase
 ```sh
 gitconfig --global pull.rebase ture
 ```
+
+# git pull options
+
+위에서 살펴본 `--rebase` 이외에도 `--ff-only`, `--no-rebase`라는 옵션이 존재한다
+
+그렇다면 이 옵션들은 각각 무슨 역할을 하는걸까?
+
+
 
 ## \*references
 
