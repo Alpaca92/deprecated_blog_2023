@@ -2,14 +2,17 @@
 title: React Hooks 사용 시 주의할 점들
 date: 2022-10-04 19:10:03
 category: dev
-draft: true
+# draft: true
+draft: false
 ---
 
 오늘은 여태 react hooks을 사용하면서 겪었던 경험들을 바탕으로 사용시 주의할 점에 대해 정리해보고자 한다
 
+(따라서 불편함을 겪거나 궁금한 점이 있을 때마다 업데이트가 될 것 같다)
+
 # useState()
 
-## setState안에서 console.log 사용
+## setState(setter)는 비동기로 작동한다
 
 setState를 하고나서 console.log를 통해 변경된 state 값을 확인해주는 경우는 흔하다
 
@@ -61,8 +64,93 @@ const incrementState = () => {
 
 비동기에 대해 잘 모르겠다면 [이글](<https://alpaca92.github.io/dev/자바스크립트에-대하여-(1)/>)을 읽고오길 권장한다
 
+# useEffect()
 
+## dependency의 비교 알고리즘 이해하기
+
+리엑트는 항상 객체와 배열을 그들의 reference로 비교한다
+
+즉, 두 객체(혹은 배열)이 완벽하게 동일하더라도 reference가 다르면 다르다고 판단해 useEffect를 다시 실행시킨다
+
+```js
+const userDetails = {
+  username: 'Kim',
+};
+
+const userDetails2 = {
+  username: 'Kim',
+};
+
+console.log(userDetails === userDetails2);
+// false
+```
+
+따라서 이런 경우 개발자의 의도와는 다르게 동작할 수 있다
+
+이를 해결하기 위해서는 **좀 더 명확한 dependency를 사용**하면 된다
+
+```js
+const userDetails = {
+  username: 'Kim',
+};
+
+const userDetails2 = {
+  username: 'Kim',
+};
+
+console.log(userDetails.someKey === userDetails2.someKey);
+// true
+```
+
+useEffect를 사용한다면 다음과 같을 것이다
+
+```js
+function UserProfile({ userDetails }) {
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (userDetails.username) {
+      // Do something…!
+    }
+  }, [userDetails.username]);
+}
+```
+
+하지만 이 방법은 매우 작은 정보만을 담고있는 객체(혹은 배열)에서만 가능한 방법이다
+
+이를 위해 우리는 [메모이제이션(memoization)](https://en.wikipedia.org/wiki/Memoization)을 해서 비교하는 것이 바람직하다는 것을 알 수 있다
+
+```js
+function UserProfile({ userDetails }) {
+  const [error, setError] = useState('');
+  const { username, email, address } = userDetails;
+
+  const user = useMemo(() => createUser({ username, email, address }), [
+    username,
+    email,
+    address,
+  ]);
+
+  useEffect(() => {
+    if (username) {
+      // Do something…!
+    }
+  }, [user]);
+}
+```
+
+위와 같이 작성하면 createUser 함수는 username, email, address가 변경될 때에만 실행되어 새로운 유저객체를 생성한다
+
+> 결론은 dependency arrary에 넣는 data type이 **primitive type(Boolean, Number, String, Null, Undefined)**라면 예상대로 동작하지만 **object type(Object, Function, Array)**을 넣는 경우에는 **shallow compare**를 하기 때문에 매 렌더링마다 항상 콜백이 실행된다
+
+🍪 추가로 [dependency array비교 코드](https://github.com/facebook/react/blob/ddd1faa1972b614dfbfae205f2aa4a6c0b39a759/packages/react-reconciler/src/ReactFiberHooks.new.js#L296)를 보면 useEffect뿐만 아니라 다른 훅들에서도 사용되고 있다 짐작할 수 있다
 
 ## \*references
 
 1. [[React] setState를 했는데 console.log엔 새로운 값이 반영이 안되는 이유](https://hae-ong.tistory.com/97)
+
+2. [UseEffect dependency array and object comparison!](https://dev.to/ms_yogii/useeffect-dependency-array-and-object-comparison-45el)
+
+3. [React useEffect 의 dependency array](https://sgwanlee.medium.com/useeffect의-dependency-array-ebd15f35403a)
+
+4. [의존성 배열은 shallow compare (equal), deep equal 중 어떤 것을 할까?](https://velog.io/@ckvelog/dependency-array-shallow-equal)
