@@ -8,7 +8,21 @@ draft: true
 
 웹개발을 하다보면 대부분 픽셀(px), 그리고 상대적인 단위(rem, em, etc.)를 사용하게 되는데 앱개발에서의 단위는 이와는 조금 다른 구석이 있다
 
-이 단위를 간략하게 알아보도록 하자
+이러한 단위들(dp, sp 등)이 각각 어떤 차이점이 있는지에 대해 알아보도록 하자
+
+# PPI(Pixel per inch)
+
+먼저 이들의 단위를 알기 전에 PPI에 대해 짚고 넘어가야 한다
+
+PPI란 말 그대로 1인치(inch)당 몇 개의 픽셀(pixel)로 이뤄졌는지를 나타내는 **밀도의 단위**이다
+
+예를들어 10PPI는 1인치당 10개의 픽셀이 존재한다는 뜻이므로 2차원 평면으로 볼 때 10x10 즉, 단위 면적(1inch²)당 100개의 픽셀이 존재한다는 뜻이다
+
+![PPI](./images/resolution_and_units_03.JPG)
+
+즉, 동일한 해상도라면 작은 기기일수록 더 PPI가 높으며 이는 더 선명한 화면을 구현한다는 뜻이다
+
+![각 기기별 PPI](./images/resolution_and_units_04.JPG)
 
 # Pixel
 
@@ -22,7 +36,9 @@ draft: true
 
 즉, 고해상도 기기에서의 픽셀의 크기가 저해상도에서의 픽셀의 크기보다 작다<br />(모니터 해상도를 조절할 때 아이콘 등이 커지고 작아진 경험이 있을 것이다)
 
-## 🍪(물리픽셀, 논리픽셀)
+## 🍪물리픽셀(Physical pixel)과 논리픽셀(Logical pixel)
+
+
 
 # DP(Density Independent Pixel)
 
@@ -37,3 +53,5 @@ draft: true
 1. [What is the Difference Between Screen Size and Screen Resolution?](https://www.itsasap.com/blog/screen-size-vs-screen-resolution)
 
 2. [디스플레이 단위(PX, DP, SP, PT) 알아보기](https://brunch.co.kr/@zalhanilll/407)
+
+3. [웹해상도 (물리픽셀, 논리픽셀, 고밀도 해상도, PPI)](https://abcdqbbq.tistory.com/47)
