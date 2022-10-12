@@ -10,19 +10,19 @@ draft: true
 
 이러한 단위들(dp, sp 등)이 각각 어떤 차이점이 있는지에 대해 알아보도록 하자
 
-# PPI(Pixel per inch)
+# ppi(Pixel per inch)
 
-먼저 이들의 단위를 알기 전에 PPI에 대해 짚고 넘어가야 한다
+먼저 이들의 단위를 알기 전에 ppi에 대해 짚고 넘어가야 한다
 
-PPI란 말 그대로 1인치(inch)당 몇 개의 픽셀(pixel)로 이뤄졌는지를 나타내는 **밀도의 단위**이다
+ppi란 말 그대로 1인치(inch)당 몇 개의 픽셀(pixel)로 이뤄졌는지를 나타내는 **밀도의 단위**이다
 
-예를들어 10PPI는 1인치당 10개의 픽셀이 존재한다는 뜻이므로 2차원 평면으로 볼 때 10x10 즉, 단위 면적(1inch²)당 100개의 픽셀이 존재한다는 뜻이다
+예를들어 10ppi는 1인치당 10개의 픽셀이 존재한다는 뜻이므로 2차원 평면으로 볼 때 10x10 즉, 단위 면적(1inch²)당 100개의 픽셀이 존재한다는 뜻이다
 
-![PPI](./images/resolution_and_units_03.JPG)
+![ppi](./images/resolution_and_units_03.JPG)
 
-즉, 동일한 해상도라면 작은 기기일수록 더 PPI가 높으며 이는 더 선명한 화면을 구현한다는 뜻이다
+즉, 동일한 해상도라면 작은 기기일수록 더 ppi가 높으며 이는 더 선명한 화면을 구현한다는 뜻이다
 
-![각 기기별 PPI](./images/resolution_and_units_04.JPG)
+![각 기기별 ppi](./images/resolution_and_units_04.JPG)
 
 # Pixel
 
@@ -38,7 +38,19 @@ PPI란 말 그대로 1인치(inch)당 몇 개의 픽셀(pixel)로 이뤄졌는�
 
 ## 🍪물리픽셀(Physical pixel)과 논리픽셀(Logical pixel)
 
+활자 크기를 재는 단위로 파이카라는게 있다
 
+1파이카는 1/6인치이며, 우리가 쓰는 폰트사이즈 12포인트에 해당한다
+
+즉 1/72인치는 1포인트이며 이게 우리가 전통적으로 사용하는 **웹환경(72ppi)**이다
+
+하지만 포인트는 현실 세계의 길이 단위인데 이 단위를 기계의 픽셀이라는 점의 단위로 표현하면서 문제가 발생한다
+
+포인트가 픽셀로 렌더링되는 과정(rasterization)을 거치게 되는데 이를 1x(1:1)로 전환하면 아래와 같이 선명하지 않은 화면을 얻는다
+
+![논리픽셀, 렌더픽셀, 물리픽셀의 차이](./images/resolution_and_units_05.JPG)
+
+이를 막기 위해서 더크게(2x, 3x, ...) 래스터라이제이션을 하여 다운샘플링(down sampling)을 하여 밀도(ppi)를 높이는 방식을 사용한다
 
 # DP(Density Independent Pixel)
 
@@ -54,4 +66,8 @@ PPI란 말 그대로 1인치(inch)당 몇 개의 픽셀(pixel)로 이뤄졌는�
 
 2. [디스플레이 단위(PX, DP, SP, PT) 알아보기](https://brunch.co.kr/@zalhanilll/407)
 
-3. [웹해상도 (물리픽셀, 논리픽셀, 고밀도 해상도, PPI)](https://abcdqbbq.tistory.com/47)
+3. [웹해상도 (물리픽셀, 논리픽셀, 고밀도 해상도, ppi)](https://abcdqbbq.tistory.com/47)
+
+4. [물리적 해상도와 논리적 해상도, point, pixel](https://beerntv.wordpress.com/2017/02/02/물리적-해상도와-논리적-해상도-point-pixel/)
+
+5. [픽셀이라고 다 같은 픽셀이 아닙니다](https://medium.com/@juhyoung.jung1992/픽셀이라고-다-같은-픽셀이-아닙니다-edc8bf836da2)
