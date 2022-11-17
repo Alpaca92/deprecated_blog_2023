@@ -12,6 +12,24 @@ draft: false
 
 # useState()
 
+## useState를 const로 사용하는 이유
+
+우리가 `useState`를 사용할 때에는 일반적으로 다음과 같이 사용한다
+
+```js
+import { useState } from 'react';
+
+function App() {
+  const [state, setState] = useState(0);
+
+  // do something..
+}
+```
+
+state는 분명 변경되는데 어째서 state를 변경 불가능한 const로 선언하였을까?
+
+이를 알기 위해서는 useState가 동작하는 방식에 대해 알 필요가 있다
+
 ## setState(setter)는 비동기로 작동한다
 
 setState를 하고나서 console.log를 통해 변경된 state 값을 확인해주는 경우는 흔하다
@@ -147,10 +165,14 @@ function UserProfile({ userDetails }) {
 
 ## \*references
 
-1. [[React] setState를 했는데 console.log엔 새로운 값이 반영이 안되는 이유](https://hae-ong.tistory.com/97)
+1. [hooks에서 useState가 const로 선언되는 이유](https://dudghsx.tistory.com/18)
 
-2. [UseEffect dependency array and object comparison!](https://dev.to/ms_yogii/useeffect-dependency-array-and-object-comparison-45el)
+2. [[번역] 심층 분석: React Hook은 실제로 어떻게 동작할까?](https://hewonjeong.github.io/deep-dive-how-do-react-hooks-really-work-ko/)
 
-3. [React useEffect 의 dependency array](https://sgwanlee.medium.com/useeffect의-dependency-array-ebd15f35403a)
+3. [[React] setState를 했는데 console.log엔 새로운 값이 반영이 안되는 이유](https://hae-ong.tistory.com/97)
 
-4. [의존성 배열은 shallow compare (equal), deep equal 중 어떤 것을 할까?](https://velog.io/@ckvelog/dependency-array-shallow-equal)
+4. [UseEffect dependency array and object comparison!](https://dev.to/ms_yogii/useeffect-dependency-array-and-object-comparison-45el)
+
+5. [React useEffect 의 dependency array](https://sgwanlee.medium.com/useeffect의-dependency-array-ebd15f35403a)
+
+6. [의존성 배열은 shallow compare (equal), deep equal 중 어떤 것을 할까?](https://velog.io/@ckvelog/dependency-array-shallow-equal)
