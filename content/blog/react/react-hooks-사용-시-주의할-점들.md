@@ -308,8 +308,6 @@ function UserProfile({ userDetails }) {
 
 7. [React: Let’s deep dive into deps array of useEffect](https://medium.com/suyeonme/react-lets-deep-dive-into-deps-array-of-useeffect-13ab96468db7)
 
-<!-- ⚠️아래 글은 아직 읽어보지 않았으므로 꼭! 읽어보도록 하자 -->
-
 8. [리액트의 렌더링은 어떻게 일어나는가?](https://yceffort.kr/2022/04/deep-dive-in-react-rendering#리엑트-렌더링-규칙)
 
 9. [When does React re-render components?](https://felixgerschau.com/react-rerender-components/)
