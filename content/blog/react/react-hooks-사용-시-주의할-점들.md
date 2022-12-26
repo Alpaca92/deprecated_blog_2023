@@ -294,20 +294,20 @@ function UserProfile({ userDetails }) {
 
 ## \*references
 
-1. [hooks에서 useState가 const로 선언되는 이유](https://dudghsx.tistory.com/18)
+- [hooks에서 useState가 const로 선언되는 이유](https://dudghsx.tistory.com/18)
 
-2. [[번역] 심층 분석: React Hook은 실제로 어떻게 동작할까?](https://hewonjeong.github.io/deep-dive-how-do-react-hooks-really-work-ko/)
+- [[번역] 심층 분석: React Hook은 실제로 어떻게 동작할까?](https://hewonjeong.github.io/deep-dive-how-do-react-hooks-really-work-ko/)
 
-3. [[React] setState를 했는데 console.log엔 새로운 값이 반영이 안되는 이유](https://hae-ong.tistory.com/97)
+- [[React] setState를 했는데 console.log엔 새로운 값이 반영이 안되는 이유](https://hae-ong.tistory.com/97)
 
-4. [UseEffect dependency array and object comparison!](https://dev.to/ms_yogii/useeffect-dependency-array-and-object-comparison-45el)
+- [UseEffect dependency array and object comparison!](https://dev.to/ms_yogii/useeffect-dependency-array-and-object-comparison-45el)
 
-5. [React useEffect 의 dependency array](https://sgwanlee.medium.com/useeffect의-dependency-array-ebd15f35403a)
+- [React useEffect 의 dependency array](https://sgwanlee.medium.com/useeffect의-dependency-array-ebd15f35403a)
 
-6. [의존성 배열은 shallow compare (equal), deep equal 중 어떤 것을 할까?](https://velog.io/@ckvelog/dependency-array-shallow-equal)
+- [의존성 배열은 shallow compare (equal), deep equal 중 어떤 것을 할까?](https://velog.io/@ckvelog/dependency-array-shallow-equal)
 
-7. [React: Let’s deep dive into deps array of useEffect](https://medium.com/suyeonme/react-lets-deep-dive-into-deps-array-of-useeffect-13ab96468db7)
+- [React: Let’s deep dive into deps array of useEffect](https://medium.com/suyeonme/react-lets-deep-dive-into-deps-array-of-useeffect-13ab96468db7)
 
-8. [리액트의 렌더링은 어떻게 일어나는가?](https://yceffort.kr/2022/04/deep-dive-in-react-rendering#리엑트-렌더링-규칙)
+- [리액트의 렌더링은 어떻게 일어나는가?](https://yceffort.kr/2022/04/deep-dive-in-react-rendering#리엑트-렌더링-규칙)
 
-9. [When does React re-render components?](https://felixgerschau.com/react-rerender-components/)
+- [When does React re-render components?](https://felixgerschau.com/react-rerender-components/)
