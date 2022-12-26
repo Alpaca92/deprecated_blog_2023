@@ -2,7 +2,7 @@
 title: Recoil 기본
 date: 2022-09-18 11:09:12
 category: react
-draft: true
+draft: false
 ---
 
 `Recoil`은 페이스북에서 만든 상태관리 라이브러리로 useState를 사용하는 것 만큼 사용이 간단하면서 상태관리를 효율적으로 할 수 있게 도와준다
@@ -18,14 +18,14 @@ draft: true
 여러 개의 Root가 공존할 수 있으며, atom state의 독립적인 공급자/저장소를 나타낼 수 있다
 
 ```js
-import { RecoilRoot } from 'recoil'
+import { RecoilRoot } from 'recoil';
 
 function App() {
   return (
     <RecoilRoot>
       <someComponents />
     </RecoilRoot>
-  )
+  );
 }
 ```
 
@@ -68,12 +68,12 @@ get을 사용하여 상태(atom 혹은 다른 selector)를 조회할 수 있는 
 const fontSizeLabelState = selector({
   key: 'fontSizeLabelState',
   get: ({ get }) => {
-    const fontSize = get(fontSizeState)
-    const unit = 'px'
+    const fontSize = get(fontSizeState);
+    const unit = 'px';
 
-    return `${fontSize}${unit}`
+    return `${fontSize}${unit}`;
   },
-})
+});
 ```
 
 ## set
@@ -89,15 +89,15 @@ const proxySelector = selector({
   key: 'proxySelector',
   get: ({ get }) => ({ ...get(myAtom), extraField: 'some string' }),
   set: ({ set }) => ({ set }, newValue) => set(myAtom, newValue),
-})
+});
 ```
-
-# useRecoilCallback(callback, deps)
 
 ## \*references
 
-1. [Recoil 기초 개념 및 사용법](https://code-masterjung.tistory.com/128)
+- [Recoil 기초 개념 및 사용법](https://code-masterjung.tistory.com/128)
 
-2. [Recoil Documentation](https://recoiljs.org/docs/introduction/installation)
+- [Recoil Documentation](https://recoiljs.org/docs/introduction/installation)
 
-3. [Recoil 레시피: 스냅샷과 상태 모니터링](https://taegon.kim/archives/10126)
+- [Recoil 레시피: 스냅샷과 상태 모니터링](https://taegon.kim/archives/10126)
+
+- [Recoil 200% 활용하기](https://velog.io/@juno7803/Recoil-Recoil-200-활용하기)
