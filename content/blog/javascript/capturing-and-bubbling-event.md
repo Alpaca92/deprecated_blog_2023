@@ -2,7 +2,7 @@
 title: Capturing and Bubbling
 date: 2022-12-26 15:12:05
 category: javascript
-draft: true
+draft: false
 ---
 
 어떠한 동작에 특정 기능을 넣기 위해 우리는 이벤트를 사용한다
