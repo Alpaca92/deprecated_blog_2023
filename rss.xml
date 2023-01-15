@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 09 Jan 2023 23:48:22 GMT</lastBuildDate><item><title><![CDATA[Capturing and Bubbling]]></title><description><![CDATA[어떠한 동작에 특정 기능을 넣기 위해 우리는 이벤트를 사용한다 위 구조에서 뿐 아니라  혹은 을 클릭해도 이벤트는 발생한다 나는 에 클릭이벤트를 넣었는데 어째서 다른 곳을 클릭해도 해당 이벤트가 동작하는 것일까? Bubbling…]]></description><link>https://alpaca92.github.io/javascript/capturing-and-bubbling-event/</link><guid isPermaLink="false">https://alpaca92.github.io/javascript/capturing-and-bubbling-event/</guid><pubDate>Mon, 26 Dec 2022 15:12:05 GMT</pubDate><content:encoded>&lt;p&gt;어떠한 동작에 특정 기능을 넣기 위해 우리는 이벤트를 사용한다&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Memory !== Record]]></title><description><![CDATA[안녕하세요. 프론트엔드 개발자 Ayaan입니다🔥]]></description><link>https://alpaca92.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Jan 2023 08:02:00 GMT</lastBuildDate><item><title><![CDATA[Capturing and Bubbling]]></title><description><![CDATA[어떠한 동작에 특정 기능을 넣기 위해 우리는 이벤트를 사용한다 위 구조에서 뿐 아니라  혹은 을 클릭해도 이벤트는 발생한다 나는 에 클릭이벤트를 넣었는데 어째서 다른 곳을 클릭해도 해당 이벤트가 동작하는 것일까? Bubbling…]]></description><link>https://alpaca92.github.io/javascript/capturing-and-bubbling-event/</link><guid isPermaLink="false">https://alpaca92.github.io/javascript/capturing-and-bubbling-event/</guid><pubDate>Mon, 26 Dec 2022 15:12:05 GMT</pubDate><content:encoded>&lt;p&gt;어떠한 동작에 특정 기능을 넣기 위해 우리는 이벤트를 사용한다&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token special-attr&quot;&gt;&lt;span class=&quot;token attr-name&quot;&gt;onclick&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token value javascript language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;The handler!&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
   &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;em&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;If you click on &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;EM&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;, the handler on &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;DIV&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;code&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; runs.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;em&lt;/span&gt;
@@ -2658,13 +2658,41 @@ ayaan&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firstName &lt
 
 &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ayaan&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getFullName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// ayaan yim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;📌 &lt;code class=&quot;language-text&quot;&gt;private&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;protected&lt;/code&gt;의 차이&lt;br /&gt; &gt; &lt;br /&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;private&lt;/code&gt; : private로 선언한 클래스 내에서만 접근할 수 있으며, 상속을 받은 클래스 및 인스턴스는 접근할 수 없다&lt;br /&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt; : 상속을 받은 클래스 및 인스턴스에서 자유롭게 접근할 수 있다&lt;br /&gt; &gt; &lt;code class=&quot;language-text&quot;&gt;protected&lt;/code&gt; : 상속을 받은 클래스 내에서는 접근할 수 있지만 인스턴스에서는 접근할 수 없다&lt;br /&gt; &gt; &lt;br /&gt;
-|구분|선언한 클래스 내에서 접근|상속받은 클래스 내에서 접근|인스턴스에서 접근|
-|:-:|:----------------------:|:----------------------:|:--------------:|
-|private| ⭕ | ❌ | ❌ |
-|public| ⭕ | ⭕ | ⭕ |
-|protected| ⭕ | ⭕ | ❌ |&lt;/p&gt;
+&lt;p&gt;📌 &lt;code class=&quot;language-text&quot;&gt;private&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;protected&lt;/code&gt;의 차이&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;private&lt;/code&gt; : private로 선언한 클래스 내에서만 접근할 수 있으며, 상속을 받은 클래스 및 인스턴스는 접근할 수 없다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;public&lt;/code&gt; : 상속을 받은 클래스 및 인스턴스에서 자유롭게 접근할 수 있다&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;protected&lt;/code&gt; : 상속을 받은 클래스 내에서는 접근할 수 있지만 인스턴스에서는 접근할 수 없다&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;구분&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;선언한 클래스 내에서 접근&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;상속받은 클래스 내에서 접근&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;인스턴스에서 접근&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;private&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;⭕&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;public&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;⭕&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;⭕&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;⭕&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;protected&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;⭕&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;⭕&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;추상클래스를 사용하면 추상메서드(abstract method)를 사용할 수 있는데 이는 추상클래스를 상속받는 모든 것들이 필수로 구현해야하는 메소드를 말한다&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
