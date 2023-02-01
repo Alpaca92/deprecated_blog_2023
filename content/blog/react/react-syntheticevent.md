@@ -58,7 +58,7 @@ _"이벤트 핸들러는 모든 브라우저에서 동일하게 이벤트를 처
 
 > 🍪 자세한 내용은 [여기](https://beta.reactjs.org/reference/react-dom/components/common#react-event-object-properties)를 참고하자
 
-
+또한 원래 브라우저 [이벤트](https://developer.mozilla.org/en-US/docs/Web/API/Event) 객체인 `nativeEvent`도 제공한다
 
 ## \*references
 
