@@ -20,14 +20,14 @@ element.addEventListener(on<event>, event handler);
 </button>
 <script>
   function eventHandler() {
-    alert('click event is occured');
+    alert('click event is occurred');
   }
 </script>
 ```
 
 ```jsx
 // React
-<SomeComponent onClick={() => alert('click event is occured')}>
+<SomeComponent onClick={() => alert('click event is occurred')}>
   some clickable element
 </SomeComponent>
 ```
