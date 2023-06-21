@@ -78,7 +78,11 @@ react metaframework인 `Next.js`를 본격적으로 시작하려고 마음을 �
 > <br />
 > 하지만 이 또한 자바스크립트 파일을 캐시로 저장해야되기 때문에 브라우저의 메모리를 많이 차지해 성능저하를 발생시킬 우려가 있다
 
-## SPA
+이제 `CSR`방식을 주로 사용하는 `SPA`가 `SSR(Server Side Rendering)`이 필요한 이유
+
+즉, `Next.js`가 사랑받는 이유에 대해 알아보자
+
+## SPA로 구성된 웹은 왜 SSR이 필요할까?
 
 #### References
 
