@@ -89,3 +89,5 @@ react metaframework인 `Next.js`를 본격적으로 시작하려고 마음을 �
 - [What is the Client-Side Rendering and how it works](https://ferie.medium.com/what-is-the-client-side-rendering-and-how-it-works-c90210e2cd14)
 
 - [Pros and Cons of Client-Side Rendering](https://www.pluralsight.com/guides/pros-and-cons-of-client-side-rendering)
+
+- [SPAs and Server Side Rendering: A Must, or a Maybe?](https://www.dotcms.com/blog/post/spas-and-server-side-rendering-a-must-or-a-maybe)
