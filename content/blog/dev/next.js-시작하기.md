@@ -84,6 +84,32 @@ react metaframework인 `Next.js`를 본격적으로 시작하려고 마음을 �
 
 ## SPA로 구성된 웹은 왜 SSR이 필요할까?
 
+`SPA(Single Page Application)`은 주로 `CSR`을 사용하여 구성된다
+
+따라서 `SPA`는 `CSR`의 단점을 그대로 갖고 있다고해도 무방하다
+
+이때문에 `SPA`에서 `SSR`이 필요하다 볼 수 있다
+
+> `SSR`은 모든 유저의 요청을 서버측에서 처리 후 전달한다
+
+`SSR`이 갖는 장점으로는
+
+1. SEO 향상
+
+서버에서 모든 요청을 처리 후 완전한 HTML을 전해주기 때문에 일반적으로 크롤러에 잘 노출되어 SEO가 향상된다
+
+2. 성능 향상
+
+`CSR`의 성능은 대부분 해당 기기에 의존한다
+
+해당 기기의 성능이 좋을수록 빠르게 컨텐츠를 볼 수 있고 만약 성능이 좋지 않다면 컨텐츠를 보는 속도는 느려진다
+
+하지만 `SSR`의 경우 서버에서 이를 처리하기 때문에 모든 기기에서 일률적인 성능을 보인다
+
+그렇다면 `SPA`를 `SSR`로 구현하면 항상 만족할만한 결과가 나올까?
+
+모든 선택에는 [트레이드 오프](https://ko.wikipedia.org/wiki/트레이드오프)가 존재한다
+
 #### References
 
 - [What is the Client-Side Rendering and how it works](https://ferie.medium.com/what-is-the-client-side-rendering-and-how-it-works-c90210e2cd14)
