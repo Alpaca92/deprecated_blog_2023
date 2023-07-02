@@ -2,7 +2,7 @@
 title: Next.js 시작하기
 date: 2023-06-21 15:06:32
 category: dev
-draft:true
+draft: true
 ---
 
 react metaframework인 `Next.js`를 본격적으로 시작하려고 마음을 먹었는데 먼저 리엑트와의 차이점과 어떤 장점이 있길래 `Next.js`를 사용하는 것인지 알아보려고 한다
