@@ -2,10 +2,10 @@
 title: Next.js 시작하기
 date: 2023-06-21 15:06:32
 category: dev
-draft: true
+draft: false
 ---
 
-react metaframework인 `Next.js`를 본격적으로 시작하려고 마음을 먹었는데 먼저 리엑트와의 차이점과 어떤 장점이 있길래 `Next.js`를 사용하는 것인지 알아보려고 한다
+react meta-framework인 `Next.js`를 본격적으로 시작하려고 마음을 먹었는데 먼저 리엑트와의 차이점과 어떤 장점이 있길래 `Next.js`를 사용하는 것인지 알아보려고 한다
 
 ## CSR
 
@@ -126,6 +126,98 @@ $ npx create-next-app my-app
 
 이번 장에서는 위와 같이 앱을 만들고 `npm run start`로 실행할 때 넥스트 프로젝트에서 어떤일이 벌어지는지 알아보자
 
+![npm run start code](./images/npm-start-code.png)
+
+위 코드에서 알 수 있듯이 실제로 실행되는 코드는 아래와 같다
+
+```bash
+# $ npm run start의 실제 실행되는 명령어
+$ npm run next start
+```
+
+위 코드를 [vercel github](https://github.com/vercel/next.js/)에서 좀 더 자세히 살펴보자
+
+1. `next.js/packages/next/src/lib/commands.ts`
+
+```ts
+export type CliCommand = (argv?: string[]) => void;
+
+export const commands: { [command: string]: () => Promise<CliCommand> } = {
+  start: () => Promise.resolve(require('../cli/next-start').nextStart),
+  // ...
+};
+```
+
+`start`라는 메서드가 실행되면 `nextStart` 메서드가 호출 된다
+
+2. `next.js/packages/next/src/cli/next-start.ts`
+
+validation한 args들을 읽어 host, project dir, port 등의 설정값을 불러 온 후 `startServer`함수를 실행한다
+
+3. `next.js/packages/next/src/server/lib/start-server.ts`
+
+```ts
+// setup server listener as fast as possible
+const server = http.createServer(async (req, res) => {
+  try {
+    if (handlersPromise) {
+      await handlersPromise;
+      handlersPromise = undefined;
+    }
+    sockets.add(res);
+    res.on('close', () => sockets.delete(res));
+    await requestHandler(req, res);
+  } catch (err) {
+    res.statusCode = 500;
+    res.end('Internal Server Error');
+    Log.error(`Failed to handle request for ${req.url}`);
+    console.error(err);
+  }
+});
+
+// ...
+
+await new Promise<void>(resolve => {
+  server.on('listening', () => {
+    const addr = server.address();
+    port = typeof addr === 'object' ? addr?.port || port : port;
+
+    let host = !hostname || hostname === '0.0.0.0' ? 'localhost' : hostname;
+
+    let normalizedHostname = hostname || '0.0.0.0';
+
+    if (isIPv6(hostname)) {
+      host = host === '::' ? '[::1]' : `[${host}]`;
+      normalizedHostname = `[${hostname}]`;
+    }
+    targetHost = host;
+
+    const appUrl = `http://${host}:${port}`;
+
+    if (isNodeDebugging) {
+      const debugPort = getDebugPort();
+      Log.info(
+        `the --inspect${
+          isNodeDebugging === 'brk' ? '-brk' : ''
+        } option was detected, the Next.js proxy server should be inspected at port ${debugPort}.`
+      );
+    }
+
+    Log.ready(
+      `started server on ${normalizedHostname}${
+        (port + '').startsWith(':') ? '' : ':'
+      }${port}, url: ${appUrl}`
+    );
+    resolve();
+  });
+  server.listen(port, hostname);
+});
+```
+
+`startServer` 함수에서는 http server 객체를 생성하고 이를 실행한다
+
+서버는 node.js를 통해 생성되며, `startServer`함수를 통해 받아온 arg들을 통해 서버가 생성된다
+
 #### References
 
 - [What is the Client-Side Rendering and how it works](https://ferie.medium.com/what-is-the-client-side-rendering-and-how-it-works-c90210e2cd14)
@@ -133,3 +225,5 @@ $ npx create-next-app my-app
 - [Pros and Cons of Client-Side Rendering](https://www.pluralsight.com/guides/pros-and-cons-of-client-side-rendering)
 
 - [SPAs and Server Side Rendering: A Must, or a Maybe?](https://www.dotcms.com/blog/post/spas-and-server-side-rendering-a-must-or-a-maybe)
+
+- [vercel/next.js](https://github.com/vercel/next.js/)
